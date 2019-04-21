@@ -45,3 +45,10 @@ tail|顯示文件最後往回算起n行的內容|tail -n fileName
 diff|比較兩個文件之差異|diff fileA fileB
 wc|統計文件的行數, 詞數與字元數 (左至右)|wc fileName
 nl|印出文件加上行號|nl fileName
+
+　
+- 參考資料：
+    
+    <https://www.jianshu.com/p/3291de46f3ff>
+
+    <http://linux.vbird.org/linux_basic/0220filemanager/0220filemanager.php>
