@@ -25,4 +25,4 @@
 11. 承上，這時候你就可以回到本地端，checkout 回 master，然後 pull 老師已經改完並完成 merging 的 master 到本地端，接著你再把 Week1 這個 branch 刪除。
 12. 完成。
 
-- 總結：完成作業　－＞　push branch －＞ Issue 留言貼網址　－＞　pull master (老師改完已 merge)　－＞刪除本地端 branch
+- 總結：完成作業　－＞　push branch －＞ Issue 留言貼網址　－＞ ***老師改完，merge branch 並關閉 Issue***　－＞　pull master －＞刪除本地端 branch
