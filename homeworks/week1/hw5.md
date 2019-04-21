@@ -10,8 +10,8 @@
     
     就時點而言，前端所顯現的內容一般最先被使用者接觸，而使用者與前端互動後才會經過後端的接收 request 與回傳 response 的部分，而其又再次回傳至前端給使用者觀覽。
     
-
-## 假設我今天去 Google 首頁搜尋框打上：JavaScri[t 並且按下 Enter，請說出從這一刻開始到我看到搜尋結果為止發生在背後的事情。
+---
+## 假設我今天去 Google 首頁搜尋框打上：JavaScri**p**t 並且按下 Enter，請說出從這一刻開始到我看到搜尋結果為止發生在背後的事情。
 
 
 
@@ -29,13 +29,10 @@
 
 
 
-    參考資料：<https://www.youtube.com/watch?time_continue=137&v=BNHR6IQJGZs>
-
-
-
+    - 參考資料：
     
-
-
+        <https://www.youtube.com/watch?time_continue=137&v=BNHR6IQJGZs>
+---
 ## 請列舉出 5 個 command line 指令並且說明功用
 
 指令|功用|舉例
