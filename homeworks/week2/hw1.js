@@ -4,7 +4,7 @@ function printStars(n) {
       console.log('*');
     }
   } else {
-    console.log('必須至少是 1 且不得超過 30');
+    console.log('必須至少是 1 且不得超過 30 的正整數');
   }
 }
 printStars(9);

@@ -5,6 +5,6 @@ function reverse(str) {
   for (let i = n; i >= 0; i -= 1) {
     newStr += strArray[i];
   }
-  return newStr;
+  console.log(newStr);
 }
-console.log(reverse('1,2,3,2,1'));
+reverse('ClAy');
