@@ -12,18 +12,44 @@
 
     Ikea 的主題展區就像是該平台的一個窗口一樣，API 也是如此，透過該平台的 API（如主題展區），你可以取用內部的資料，而不用真的進入該後台（如倉庫區），API 能夠幫你做到你想要的事情，但你能透過 API 做些什麼，也是該平台所規定的，就像你不能叫 Ikea 的正妹店員陪你去餐廳餵你吃飯一樣，Ikea 應該不會允許顧客這麼做。
 
-
+------
 
 ## 請找出三個課程沒教的 HTTP status code 並簡單介紹
 
+| Status Code | 說明 |
+|-----------|-------|
+| 420 | 一個非官方的狀態碼，目前網路上的資訊為在早期 Twitter 與 Twitch API 會因為在短期送出太多 request　而回傳這個 Status Code，在新版改使用 429 表示。|
+| 735 | 非官方狀態碼，屬於 7XX-RFC，目前正由其他偉大的工程師努力擴展中？735 的意思為去你的 IE |
+| 767 | 同上，該狀態碼代表喝醉了 |
 
+感想：未來的世界有這些新的狀態碼似乎也不錯？
+
+參考資料：
+
+- 常見與不常見的 Http Status : https://noob.tw/http-status-code/
+- 7XX-RFC : https://github.com/joho/7XX-rfc
+- 6XX 狀態碼之一 : http://foaas.com/asckjbaskcnasc
+
+------
 
 ## 假設你現在是個餐廳平台，需要提供 API 給別人串接並提供基本的 CRUD 功能，包括：回傳所有餐廳資料、回傳單一餐廳資料、刪除餐廳、新增餐廳、更改餐廳，你的 API 會長什麼樣子？請提供一份 API 文件。
 
-| 說明     | Method | path       | 參數                   | 範例             |
-|--------|--------|------------|----------------------|----------------|
-| 獲取所有書籍 | GET    | /books     | _limit:限制回傳資料數量           | /books?_limit=5 |
-| 獲取單一書籍 | GET    | /books/:id | 無                    | /books/10      |
-| 新增書籍   | POST   | /books     | name: 書名 | 無              |
-| 刪除書籍   | DELETE   | /books/:id     | 無 | 無              |
-| 更改書籍資訊   | PATCH   | /books/:id     | name: 書名 | 無              |
+Base URL : https://lidemy/menu/restaurant  ( 預計2030年啟用 )
+
+- 可選查詢字符參數
+
+| 說明     | Method| 參數 | 值類型       | 說明     | 範例      |
+|--------|--------|------------|----------------------|----------------|-----|
+| 選擇回傳餐廳數量 |GET| limit    | integer     |    選擇回傳餐廳資料的數量，若不使用此參數，將回傳所有餐廳與其資料     | /restaurant?limit=30 |
+| 獲取單一餐廳資料 | GET|id   | string | 指定該 ID 餐廳並單回傳該餐廳的資料                   | /restaurant?id=11      |
+| 新增餐廳   | POST   | none     | form : object | 該物件中需要包含 Restaurant Name 與地址，ID 將由後台自動生成         | { Resturant Name : Clay's Shit, Adress : Shulin }
+| 刪除餐廳   | DELETE   | id     | string | 刪除指定 ID 的餐廳資訊              | /restaurant?id=15
+| 更改餐廳資訊   | PATCH   | id     | string / form : object  | 更新指定 ID 的餐廳資訊              | { Resturant Name : Clay's resturant, Adress : Taipei }
+
+- 回傳字段
+
+| 字段 | 類型 | 描述|
+|-----|------|-----|
+| ID | string | 該餐廳的 ID |
+| Restaurant Name | string | 該餐廳名稱 |
+| Adress | string | 該餐廳的地址 |
