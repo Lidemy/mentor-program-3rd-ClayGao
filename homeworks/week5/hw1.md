@@ -1,5 +1,10 @@
 ## 前四週心得與解題心得
 
+- 05/20 更新：
+    - 感謝第三期同學 Cindy Lyu 提供資訊，md 語法中程式碼區塊 ``` 後面接上程式語言名稱可以將程式碼上色
+    - 更新 indexOf 說明錯誤的部分
+    - 刪除多餘空格
+
 ---
 
 # Week1
@@ -165,7 +170,7 @@
 
             
 
-            ```
+            ```Javascript
             var a = 'origin'
 
             a = 'changed'
@@ -176,7 +181,7 @@
 
             另外，不可變的意思是 'change' 這個字串 ( 或其他字串 ) 你沒有辦法對其直接做更改
 
-            ```
+            ```Javascript
             var a = 'origin'
 
             a.toUpperCase()
@@ -186,7 +191,7 @@
 
             假設 'origin' 的記憶體位置是 0x01，那 0x01 所指的 'origin' 就永遠只能是 'origin'，不可使用方法直接做改變，你可能沒有察覺是因為我們已經習慣這樣寫：
 
-            ```
+            ```Javascript
             var a = 'origin'
 
             a = a.toUpperCase()
@@ -229,7 +234,7 @@
 
         - 補充 a++ / ++a 的差異( 以變數 a 為例 )
 
-            ```
+            ```Javascript
             var num;
             var a = 1;
             num = a++ // 先運算 num = a ，再運算 a = a + 1 ( a++ )，所以 num 為 1
@@ -251,7 +256,7 @@
     
     - **將物件放入變數 - 理解值與記憶體位置 ( 重要觀念 )**
 
-        ```
+        ```Javascript
         1 === 1 // ture
         'abc' === 'abc' // true
 
@@ -266,7 +271,7 @@
         當你在程式碼輸入一個物件或陣列時（即使還沒放入變數），電腦會替你輸入的這個 Object，指派一個「記憶體位置」，假設為 0x01（儘管在 JS 中你無法得知這個記憶體位置為多少），因此在你比較兩個相同值的 Object，實際上你比較的是 0x01 與 0x02，所以會不同。
 
 
-        ```
+        ```Javascript
         [1] === [1] // 等同 0x01 === 0x02 
         {a:1} === {a:1} // 等同 0x03 === 0x04
         ```
@@ -275,7 +280,7 @@
 
         先假設 {a:1} 的記憶體位置為 0x01
 
-        ```
+        ```Javascript
         var abc = {a:1} // 電腦分配一個記憶體位置給 {a:1}，假設其為 0x01，你將 0x01 賦予 abc
         ```
 
@@ -285,7 +290,7 @@
 
         我們來看第二個例子：
 
-        ```
+        ```Javascript
         var abc = {a:1} // 電腦分配一個記憶體位置給 {a:1}，假設其為 0x01，你將 0x01 賦予 abc
         var abc2 = abc // 你是將 abc 內中的 0x01 賦予 abc，而非 0x01 所放置的值 {a:1}
 
@@ -296,7 +301,7 @@
         ```
 
         第三個例子，如果這時候 abc2 = {b:2}，那 {a:1} 會不會被更動 ?
-        ```
+        ```Javascript
         var abc = {a:1} // 和第四行是一樣意思，記得我是「電腦分配一個記憶體位置給 {a:1}，假設其為 0x01，你將 0x01 賦予 abc」
         var abc2 = abc 
         abc2 = {b:2} // 請回去看第一行
@@ -308,7 +313,7 @@
 
         補充我自己想到的第四個例子，如果 abc2 被賦予的不是 {b:2} 而一樣是值 {a:1} 呢?
 
-        ```
+        ```Javascript
         var abc = {a:1} 
         var abc2 = abc 
         abc2 = {a:1} 
@@ -331,7 +336,7 @@
         - 屬於物件型別，所以其屬於可變的，其相關的內建函式有些會改變原陣列，有些不會，也不一定都會回傳值
         - 儲存於變數時，實際儲存的是記憶體位置
         - 陣列內部可以再放入陣列
-        - 索引值從 0 開始，設一陣列放入變數 arr，arr.indexOf(4) 可以看到 arr 陣列中索引值為 4 的值
+        - arr.indexOf() 方法可以可以回傳 () 內的值**首次**在陣列中出現的位置索引，若沒有出現，回傳 -1
         - 承上，陣列 arr 中最後一位索引值將會等於 arr.length - 1
         
 
@@ -365,7 +370,7 @@
 
         最好的例子如下
 
-        ```
+        ```Javascript
         var age = 17
 
         if ( age >= 15 ) {
@@ -386,7 +391,7 @@
         */
         ```
 
-        ```
+        ```Javascript
         var age = 17
 
         if ( age >= 15 ) {
@@ -406,7 +411,7 @@
 
         - 使用時機：對同一個變數進行多次條件判斷的時候，可以使用 switch 
 
-        ```
+        ```Javascript
         var a = 1
 
         switch(a) {
@@ -429,7 +434,7 @@
         
         你也可以將兩個 case 合在一起，如果他們接下來的動作是一樣的話：
         
-        ```
+        ```Javascript
         var a = 1
 
         switch(a) {
@@ -448,7 +453,7 @@
         ```
         但如果是要做類似的判斷，也可以考慮下面這種作法
         
-        ```
+        ```Javascript
         var a = 1
 
         var a_number = ['a 為 1', 'a 為 2', 'a 為 3']
@@ -462,14 +467,14 @@
         condition 為 true ? true, 則回傳此 : false, 則回傳此
 
         如下：
-        ```
+        ```Javascript
         console.log(answer = 10 > 8 ? 'yes' : 'no')
 
         //回傳 yes
         ```
 
         也可以做巢狀迴圈
-        ```
+        ```Javascript
         var a = 9
 
         var answer = a > 8 ?  ( a === 10  ? ' Yes, a = 10 ' : 'No, it isnt' ): 'no'
@@ -491,7 +496,7 @@
 
             也就是先執行一次 do {}，執行完後再判斷 while() 的內容，若為 true，再執行 do {} 中的內容
 
-            ```
+            ```Javascript
             var i = 1 
 
             do {
@@ -509,7 +514,7 @@
             ```
             另一種方法：
 
-            ```
+            ```Javascript
             var i = 1 
 
             do {
@@ -532,7 +537,7 @@
             - continue : 中斷，直接判斷 while，若 true，執行 do {}；若 false，跳出該 false
 
                 continue 範例：找出陣列中的值的索引值
-                ```
+                ```Javascript
                 var arr = [1,5,8,12,50,99,7,20]
                 var i = 0
 
@@ -548,7 +553,7 @@
                 ```
 
                 印出
-                ```
+                ```Javascript
                 不是第1個，第1個為5
                 不是第2個，第2個為8
                 不是第3個，第3個為12
@@ -581,13 +586,13 @@
 
         注意要點：
 
-        - 1. 執行條件也有人說是終止條件，但只要理解為該條件為 true 則執行 {} 即可
+        - 步驟 1 的執行條件也有人說是終止條件，但只要理解為該條件為 true 則執行 {} 即可
         - 也可以使用 break 或 continue，continue 的運行同 while : 跳出然後直接去判斷 1. 執行條件
-        - 0.建立初始值 不一定要具備，但後面的 ; 一樣要存在。  ( ; 1. 執行條件; 3. 執行完後做)
+        - 步驟 0 的建立初始值 不一定要具備，但後面的 ; 一樣要存在。  ( ; 1. 執行條件; 3. 執行完後做)
 
 - 函式
     - 結構
-        ```
+        ```Javascript
         function test() {
 
         }
@@ -603,7 +608,7 @@
         - 變數可以用來接收函式的回傳值，使用 = 連接
         - 關於 return
             - 易犯錯誤 : 假設你用 return 回傳物件，但 return 正後方一定要接上 {}，以下為錯誤示範
-                ```
+                ```Javascript
                 function a(x) {
                     return 
                     {
@@ -635,7 +640,7 @@
         - 參數的命名盡量取有意義的，非必要，但相當重要
         - 函式內什麼都可以放，當然也可以放其他 function
         - 呼叫函式的方法為　函式名()
-            ```
+            ```Javascript
             function test(x) {
                 return x*2
             }
@@ -643,7 +648,7 @@
             var a = test(2)
             ```
         - **函式中的參數也可以是代入函式作為引數（極重要）**
-            ```
+            ```Javascript
             function transform(arr, transformType) {
                 var result = []
                 for (var i = 0; i < arr.length; i++) {
@@ -661,7 +666,7 @@
             可以看到我使用的函式為 triple，依此類推，我可以在主函式中代入各式各樣我想要用的工具函式
 
             用匿名函式的方式寫則是
-            ```
+            ```Javascript
             function transform(arr, transformType) {
                 var result = []
                 for (var i = 0; i < arr.length; i++) {
@@ -679,7 +684,7 @@
             - 函式內 () 為參數
             - 呼叫內 () 為引數
             - 函式中的 arguments[]，個人覺得很酷，代表函數的處理可以看引數，參數無格式限制
-                ```
+                ```Javascript
                 function abc(){
                 return arguments[0] +  arguments[1] +  arguments[2]
                 }
@@ -692,7 +697,7 @@
 
             參數運作外在的變數時，不會直接改變變數，具體而言，JS 會複製一份你看不到的變數進入參數做運算，但運算之後的結果不會改變該變數
 
-            ```
+            ```Javascript
             function abc(x){
                 return x * 2
             }
@@ -705,7 +710,7 @@
 
             那如果 a 是物件呢 ?
 
-            ```
+            ```Javascript
             function abc(x){
               x.num++
             }
@@ -721,7 +726,7 @@
 
             那如果換一個方式呢？
 
-            ```
+            ```Javascript
             function abc(x){
                 x = {
                     num : 3
@@ -743,7 +748,8 @@
     - 介紹幾種常見的宣告函式的方式
 
         1. 基本方式
-            ```
+
+            ```Javascript
             function test(x) {
                 return x*2
             }
@@ -753,7 +759,7 @@
             ```
         2. 放入變數之中
 
-            ```
+            ```Javascript
             var a = function (x){
                 console.log(x*2)
             }
@@ -763,7 +769,7 @@
 
         3. 箭頭函式（ES6）
 
-            ```
+            ```Javascript
             var a = (x)　=> {
                 console.log(x*2)
             }
@@ -793,7 +799,7 @@
 
         以 Node.js 內建的模組 os 為例，我可以要求使用，並使用裡面的其中一個 function 名為 platform，官方文件表示這個函式會回傳一個字串來辨別你的作業系統平台
 
-        ```
+        ```Javascript
         var os = require('os')
 
         console.log(os.platform()) // Win32 ( 乾買不起 MAC )
@@ -811,7 +817,7 @@
 
         - 第一種輸出方法 ( 好理解 )
 
-            ```
+            ```Javascript
             function triple(x) {
                 return x*3
             }
@@ -820,7 +826,7 @@
             ```
             如此一個可以供人使用的 Module 就完成了，這時我要如何引入 threeTimes.js 呢 ?　
 
-            ```
+            ```Javascript
             var threeTimes = require('./threeTimes') // 加上檔案路徑，可以不加副檔名 js
 
             console.log(triple(3)) // 9
@@ -830,7 +836,7 @@
 
             如果你一次要輸出多個函式，不只一個 triple，那你可以用物件把各函式打包送出
 
-            ```
+            ```Javascript
             function triple(x) {
                 return x*3
             }
@@ -848,7 +854,7 @@
 
             但是要注意的是在 require 這一端的變數 threeTimes 也會是一個物件，所以使用方法上就會不同
             
-            ```
+            ```Javascript
             var threeTimes = require('./threeTimes') // 加上檔案路徑，可以不加副檔名 js
 
             console.log(threeTimes.fun1(3),threeTimes.fun2(3)) // 6 18
@@ -858,7 +864,7 @@
             此外，你也可以換一種輸出形式，這樣的輸出也是同上面的物件形式
             exports. 本身就是一個空的物件，後面所接的就像是 { } 內中的東西
 
-            ```
+            ```Javascript
             function triple(x) {
                 return x*3
             }
@@ -881,7 +887,7 @@
 
             輸出端 threeTimes.js 如下
 
-            ```
+            ```Javascript
             export function triple(x) {
                 return x*3
             }
@@ -895,7 +901,7 @@
 
             而取用端可以這樣寫 **import {} from './路徑'**
 
-            ```
+            ```Javascript
             import {triple, A} from './threeTimes'
 
             console.log(triple(5))
@@ -904,7 +910,7 @@
 
             其實就是第四種輸出方法的另一種形式，將你要輸出的東西用 {} 打包
 
-            ```
+            ```Javascript
             function triple(x) {
                 return x*3
             }
@@ -923,7 +929,7 @@
 
             如果你想使輸出的東西以你想要的新名稱輸出出去 ( 像物件底下的名稱 )，你可以使用 as 為其取別名
 
-            ```
+            ```Javascript
             function triple(x) {
                 return x*3
             }
@@ -942,13 +948,14 @@
 
             或者你也可以將 as 用在輸入端
 
-            ```
+            ```Javascript
             import {triple as fun1, A as str} from './threeTimes'
 
             console.log(triple(5))
             ```
             接著，如果你想引入該 Module 全部有輸出的東西，可以使用 **import * as <name> from '<./Module>'**
-            ```
+
+            ```Javascript
             import * as allFunction from './threeTimes'
 
             console.log(allFunction.triple(5))
@@ -956,7 +963,7 @@
 
         - 第六種輸出方法 **export default**
 
-            ```
+            ```Javascript
             export default function triple(x) {
                 return x*3
             }
@@ -970,14 +977,15 @@
             
             那取用端就可以這樣寫
 
-            ```
+            ```Javascript
             import triple from './threeTimes'
 
             console.log(triple(5))
             ```
 
             有點像第一種使用方法，可以直接做取用，但更好的理解是，這樣的輸出方法與第四種的差別在於，取用 export default 輸出的東西時不用加大括號。
-            ```
+
+            ```Javascript
             export default function triple(x) {
                 return x*3
             }
@@ -991,7 +999,7 @@
             
             那取用端就可以這樣寫
 
-            ```
+            ```Javascript
             import triple,{A} from './threeTimes' // A 要加 {}，注意逗號
 
             console.log(triple(5),A)
@@ -1016,7 +1024,7 @@
 
                 變數運行機制會從最內層找到最外層
                 
-                ```
+                ```Javascript
                 function abc() {
                     var a = 5
                     console.log(a)
@@ -1041,7 +1049,7 @@
 
             - 多行字串
 
-                ```
+                ```Javascript
                 console.log(
                 `
                 haha
@@ -1049,12 +1057,14 @@
                 haha3
                 `
                 )
-
+                /*
                 印出
 
                   haha
                   haha2
                   haha3
+
+                */
 
                 ```
 
@@ -1062,7 +1072,7 @@
 
                 將你想插入字串中的變數 / 物件 / 陣列等等放入 ${}，再放入``之中，不用再帶入任何 + 號
 
-                ```
+                ```Javascript
                 var a = 100
 
                 console.log( `潮爽德撿到${a}塊內`) // 潮爽德撿到100塊內
@@ -1074,7 +1084,7 @@
 
         - 陣列的解構方法：
 
-            ```
+            ```Javascript
             var [a,b,c,d,e,f,e] = [1,2,3,4,5,6]
 
             console.log(b) // 2
@@ -1085,7 +1095,7 @@
 
         - 物件的解構方法：
 
-            ```
+            ```Javascript
             const obj = {
                 a : 15,
                 b : 27,
@@ -1101,7 +1111,7 @@
 
             另外就是解構完之後該變數本身內含物件元素，如果這個物件元素底下還有物件，那你也可以再對該變數進行解構一次，取它的元素。
 
-            ```
+            ```Javascript
             const obj = {
                 a : {
                     aa : 55
@@ -1124,7 +1134,7 @@
 
         簡單來說就是在陣列變數前面加上「...」，那麼它會取消掉陣列的 [] 與性質，只展現裡面的元素。
 
-        ```
+        ```Javascript
         var arr = [1,2,3,4]
 
         console.log(...arr) // 1 2 3 4 
@@ -1136,7 +1146,7 @@
         console.log(sum(...arr)) // 20
         ```
         你也可以用來複製 Array
-        ```
+        ```Javascript
         var arr = [2,3,4]
         var arr2 = [...arr]
 
@@ -1144,7 +1154,7 @@
         ```
         物件也可以使用，見下例子
 
-        ```
+        ```Javascript
         var obj1 = {
             x:1,
             y:2
@@ -1167,7 +1177,8 @@
         可以看到 obj2 與 obj3 的差別，很簡單地可以了解，展開運算子之於物件也是解開 {} 的束縛。
 
         若展開之後元素有重疊，則以較之後的元素值為準
-        ```
+
+        ```Javascript
         var obj1 = {
             x:1,
             y:2
@@ -1187,7 +1198,7 @@
 
     - 反向展開 ( Rest Parameters )
 
-        ```
+        ```Javascript
         var arr = [1,2,3,4]
         var [a,...rest] = arr
 
@@ -1202,7 +1213,7 @@
 
         物件也是同樣寫法
 
-        ```
+        ```Javascript
         obj1 = {
             a:1,
             b:2,
@@ -1216,7 +1227,7 @@
 
         反向展開也可以用在函式，參考下面兩個例子
 
-        ```
+        ```Javascript
         function sum(...args) {
             console.log(args)
             return args[0] + args[1]
@@ -1224,7 +1235,7 @@
 
         console.log(sum(3,5))
         ```
-        ```
+        ```Javascript
         function sum(a,...args) {
             console.log(args)
             return a + args[0]
@@ -1239,7 +1250,7 @@
 
         可以用在 function 的參數上，可以直接幫參數賦予預設值
 
-        ```
+        ```Javascript
         function sum(a,b,c = 10) {
   
             return (a + b)*c
@@ -1275,7 +1286,7 @@
     - package.json 底下的 script 區塊
 
         內中可以設定你想執行的指令名稱，指令名稱後面可以指定你要執行什麼。
-         ```
+         ```JSON
          "script" : {
              "start": "node index.js"
          }
@@ -1305,7 +1316,7 @@
     這時候我們建立測試檔案 index.test.js，這是一個淺規則的命名方法，代表是 index 的測試專用檔案
 
     內容為 
-    ```
+    ```Javascript
     var repeat = require('./index')
  
  
@@ -1315,7 +1326,7 @@
     
     ```
     如果描述格式的話就是
-    ```
+    ```Javascript
     test(
         '對於測試的描述',
         function(){
@@ -1327,7 +1338,7 @@
 
     如果要多做幾次測試的話，在最外層加入 describe('描述',function(){ 測試內容即可 })
 
-    ```
+    ```Javascript
     var a = require('該exports')
     
     describe('總測試名稱', function(){
@@ -1406,7 +1417,7 @@
             - header
             - body ( 若 method 為 POST )
 
-            當 method 為 POST 的時候，Chrome 可以看到 POST 的格式內容，這表示了在之後使用 request 套件的時候，我們會在 POST 使用 {} 寫入內容送出。
+        當 method 為 POST 的時候，Chrome 可以看到 POST 的格式內容，這表示了在之後使用 request 套件的時候，我們會在 POST 使用 {} 寫入內容送出。
 
         response 的內容通常包含下列資訊：
             - Status Code
@@ -1527,46 +1538,3 @@
     關於 API 的概念每次複習都有新的想法，在 RESTful 風格之下的 Web API 更容易讓新手開發者將 API 概念與一般的 request / response 概念牽連在一起，至少目前學習到現在看來，本質幾乎是一模一樣的。
 
     如果將第四週課程的邏輯融會貫通，其實可以非常好理解「網路交換資料的方式不限於 HTTP - 跳脫 HTTP 的限制」與「 Web API 不完全等於 HTTP API - 其他的 API 」 的概念，原本你以為的東西，它只是佔我們生活中的 98% ，但並非 100%，不要忽視了那些其它存在的資料傳輸與交換方式。
-
-
-
-        
-    
-
-
-    
-
-
-
-
-    
-
-
-
-
-
-
-
-        
-
-        
-
-
-
-
-            
-
-
-
-        
-        
-
-
-
-
-
-
-
-
-    
-
