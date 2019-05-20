@@ -1487,15 +1487,9 @@
 
 
         - [OSI 七層](https://zh.wikipedia.org/wiki/OSI%E6%A8%A1%E5%9E%8B)
-        - [TCP / IP 四層](http://cn.linux.vbird.org/linux_server/0110network_basic.php#whatisnetwork_tcpip):
+        - [TCP / IP 四層](http://cn.linux.vbird.org/linux_server/0110network_basic.php#whatisnetwork_tcpip)
 
-            由上到下分別為：
-            |TCP / IP 四層|    
-            |---------|    
-            |1. 應用層|
-            |2. 傳輸層|
-            |3. 網路層|
-            |4. 連結層|
+           
 
     - IP
 
