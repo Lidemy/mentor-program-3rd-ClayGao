@@ -1,0 +1,32 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+.wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    padding-top: 40px;
+}
+
+p {
+    padding: 10px 0;
+}
+
+.clap-button {
+    position: fixed;
+    top: 150px;
+    left: 36px;
+    height: 60px;
+    width: 60px;
+    border: 1px solid grey;
+    border-radius: 50%;
+   
+    cursor: pointer;
+    text-align: center;
+} 
+
+.clap-button:hover {
+    border: 1px solid black;
+}
+
