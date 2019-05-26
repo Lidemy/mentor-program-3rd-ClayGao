@@ -1,12 +1,13 @@
-* {
+body {
     padding: 0px;
-    margin: 0px;
+    margin: 0px 15px;
 }
 
 .wrapper {
     max-width: 900px;
     margin: 0 auto;
     padding-top: 40px;
+   
 }
 
 p {
@@ -21,12 +22,42 @@ p {
     width: 60px;
     border: 1px solid grey;
     border-radius: 50%;
-   
     cursor: pointer;
     text-align: center;
 } 
+
+@media screen and (max-width: 1120px){
+    .clap-button {
+        position: relative;
+        top: 40px;
+        left: 10px;
+        height: 60px;
+        width: 60px;
+        border: 1px solid grey;
+        border-radius: 50%;
+        cursor: pointer;
+        text-align: center;
+    } 
+}
 
 .clap-button:hover {
     border: 1px solid black;
 }
 
+.title {
+    font-size: 42px;
+}
+
+
+.text {
+    font-size: 20px;
+}
+
+@media screen and (max-width: 900px) {
+    .title {
+        font-size: 36px;
+    }
+    .text {
+        font-size: 18px;
+    }
+}

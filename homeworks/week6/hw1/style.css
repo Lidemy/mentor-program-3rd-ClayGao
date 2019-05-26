@@ -41,14 +41,14 @@
 
 .others {
     display: inline-block;
-    max-width: 315px;
+    max-width: 300px;
 }
 
-.others div:first-child {
+.title__others {
     font-size: 36px;
 }
 
-.others div:nth-child(3) {
+.button__others {
     background: gray;
     padding: 10px 15px;
     margin-top: 13px;
@@ -60,31 +60,30 @@
     transition: all 0.2s;
 }
 
-.others div:nth-child(3):hover {
+.button__others:hover {
     background: rgb(77, 77, 77);
     cursor: pointer;
 }
 
-.bg-main {
+.bg__main {
     background: rgb(180, 197, 211);
 }
 
 
 
-.main div:first-child {
+.title__main {
     
     font-size: 72px;
 }
 
 
-.main div:nth-child(2) {
-    
+.text__main {
     margin-top: 13px;
 }
 
 
 
-.main div:nth-child(3) {
+.button__main {
     background: rgba(55, 107, 202, 0.966);
     padding: 16px 20px;
     margin-top: 13px;
@@ -97,7 +96,7 @@
 }
 
 
-.main div:nth-child(3):hover {
+.button__main:hover {
    background: rgb(6, 45, 172);
    cursor: pointer;
 }
