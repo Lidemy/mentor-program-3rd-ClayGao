@@ -1,0 +1,109 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+}
+
+.bg-nav {
+    background: rgb(31, 31, 41);
+    color: white;
+    padding: 14px;
+    font-family: sans-serif;
+}
+
+
+
+.bg-nav span:first-child {
+    font-size: 20px;
+}
+
+.bg-nav span ~ span {
+    margin-left: 20px;
+    color: grey;
+    transition: all 0.2s;
+}
+
+
+.bg-nav span ~ span:hover{
+    color:white;
+    cursor: pointer;
+}
+
+
+
+.wrapper {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 42px 25px;
+}
+
+
+
+.others {
+    display: inline-block;
+    max-width: 300px;
+}
+
+.title__others {
+    font-size: 36px;
+}
+
+.button__others {
+    background: gray;
+    padding: 10px 15px;
+    margin-top: 13px;
+    width: 140px;
+    color: white;
+    font-size: 17px;
+    border-radius: 5px;
+    text-align: center;
+    transition: all 0.2s;
+}
+
+.button__others:hover {
+    background: rgb(77, 77, 77);
+    cursor: pointer;
+}
+
+.bg__main {
+    background: rgb(180, 197, 211);
+}
+
+
+
+.title__main {
+    
+    font-size: 72px;
+}
+
+
+.text__main {
+    margin-top: 13px;
+}
+
+
+
+.button__main {
+    background: rgba(55, 107, 202, 0.966);
+    padding: 16px 20px;
+    margin-top: 13px;
+    width: 150px;
+    color: white;
+    font-size: 20px;
+    border-radius: 5px;
+    text-align: center;
+    transition: all 0.2s;
+}
+
+
+.button__main:hover {
+   background: rgb(6, 45, 172);
+   cursor: pointer;
+}
+
+.hr {
+    background: rgb(212, 208, 208);
+    border: 0;
+    height: 1px;
+    margin-bottom: 13px;
+}
