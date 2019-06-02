@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <title>程式導師實驗計畫第三期報名表單</title>
+        <link  rel = " stylesheet "  href = " ./style.css " />
+        <meta charset="utf-8" />
+    </header>
+    <body>
+        <div class="bg1"></div>
+        <!--表單外框-->
+        <div class="wrapper">
+            <div class="title">程式導師實驗計畫第三期報名表單</div>
+            <div class="supplyment">
+                詳情請參考：
+                <a href="https://medium.com/hulis-blog/mentor-program-3rd-47a2e85e33b3">https://medium.com/hulis-blog/mentor-program-3rd-47a2e85e33b3</a><br>
+                填完之後請務必按照文章內的說明再寄信給我，才算報名成功喔
+            </div>
+            <div class="warnning">*必填</div>
+            <!-- 表單內容-->
+            <form class>
+                <div class="subtitle">電子郵件地址
+                    <span class="star"> *</span>
+                    <div>
+                        <input class="default" type="email" value="您的電子郵件">
+                    </div>
+                </div>
+                <div class="subtitle">暱稱
+                    <span class="star"> *</span>
+                    <div>該如何稱呼你</div>
+                    <div>
+                        <input class="default" type="text" value="您的回答">
+                    </div>
+                </div>
+                <div class="subtitle＿radio">報名類型
+                    <span class="star"> *</span>
+                    <div class="radio__btn">
+                        <input type="radio" name="apply__type" id="type1"><label for="type1">從零到一基礎班（兩個月後開始收保證金 5000，淘汰不退還，結業後兩個月內找到工作付一個月半薪水，沒工作不用付</label>
+                    </div>
+                    <div class="radio__btn">
+                        <input type="radio" name="apply__type" id="type2"><label for="type2">在職工程師加強班（兩個月後開始收保證金 5000，三個月時收學費 35000 元台幣，被淘汰不退還</label>
+                    </div>
+                </div>
+                <div class="subtitle">現在的職業
+                    <span class="star"> *</span>
+                    <div>範例：學生、前端工程師、待業中、業務</div>
+                    <div>
+                        <input class="default" type="text" value="您的回答">
+                    </div>
+                </div>
+                <div class="subtitle">怎麼知道這個計畫的？
+                    <span class="star"> *</span>
+                    <div>
+                        <input class="default" type="text" value="您的回答">
+                    </div>
+                </div>
+                <div class="subtitle">是否有程式相關背景？
+                    <span class="star"> *</span>
+                    <div>範例：無、高中時候學過C++、學過一點網頁前端、目前在資策會上課...</div>
+                    <div>
+                        <input class="default" type="text" value="您的回答">
+                    </div>
+                </div>
+                <div class="subtitle">其他
+                    <div>任何你想說的</div>
+                    <div>
+                        <input class="default" type="text" value="您的回答">
+                    </div>
+                </div>
+                <div class="subtitle">
+                    <input class="submit_btn" type="submit" value="提交" />
+                </div>
+            </form>
+            <!-- 表單內容-->
+        </div>
+        <!--表單外框-->
+        <footer>
+            
+        </footer>
+        <!--Jvascript-->
+        <script>
+            const enterValue = document.querySelectorAll('.default')
+            const enterBlock = document.querySelectorAll('.subtitle')
+            //console.log(enterValue[1]['value'])
+           
+           
+            for(var i = 0; i < enterValue.length; i++){ // 幫每個 block 都掛上監聽器
+
+                enterValue[i].addEventListener('click',function (e){  // 點選時清除預設並變成輸入狀態
+                    //console.log(enterBlock[i].getAttribute('class'))
+                    if ( e.target['value'] === '您的電子郵件' || e.target['value'] === '您的回答') {
+                            e.target.classList.add('default__entering') // 使輸入的字為黑色
+                            e.target['value'] = ''; // 滑鼠點擊的時候移除該內容 removeAttribute 不使用，使其為空
+                            e.stopImmediatePropagation();
+                    }
+                })
+
+               enterValue[i].addEventListener('keydown',function(e){ // 將已經被提示，後來補上文字的 block 恢復白背景
+                   if (e.key === 'Enter') {
+                       for ( var i = 0; i < enterValue.length; i++) {
+                            if ( e.target['value'] === '您的電子郵件' || e.target['value'] === '您的回答' || e.target['value'] !== '' ) {
+                                enterValue[i].classList.remove('default__warnning');　// 內框警告，讓底線與背景變紅色
+                                enterBlock[i].classList.remove('subtitle__warnning');
+                            }
+                        }
+                   }
+               })
+           }
+
+          
+           window.addEventListener('click',function(){ // 當我點選空白處時，會逐步檢查有被點過但內容為空的 block，提示警告
+                for ( var i = 0; i < (enterValue.length - 1) ; i++) {　// 逐步檢查開始，不包含最後一項
+                    if ( enterValue[i].value === '' ) {
+                        enterValue[i].classList.remove('default__entering');
+                        enterValue[i].classList.add('default__warnning');　// 內框警告，讓底線與背景變紅色
+                        enterBlock[i].classList.add('subtitle__warnning'); // block 框框警告，讓 block 背景變紅色
+                        if (i === 0) {
+                            enterValue[i].value = '您的電子郵件';
+                        } else enterValue[i].value = '您的回答';
+                    } 
+                }
+            },true)
+
+            document.querySelector('.submit_btn').addEventListener('click',function(e){
+                const ans = 0;
+                for (var i = 0 , result = 0; i < enterValue.length; i++) {
+                    if ( enterValue[i].value === '您的回答' || enterValue[i].value === '您的電子郵件' || enterValue[i].value === '') {
+                        ans -= 1;
+                        //e.preventDefault;
+                    } else {
+                        console.log (enterValue[i].value)
+                        //e.preventDefault;
+                    }
+                } 
+                if ( ans < 0 ) { 
+                    console.log(ans)
+                    alert('有問題尚未填寫')
+                } 
+                alert('填寫成功')
+
+            })
+               
+
+
+
+            
+
+    
+            /* 如果你的目標只有單框，可用以下語法
+            enterValue[1].addEventListener('click',function(e){  // 點選時變成輸入狀態
+                //console.log(e.target['name'])
+                if ( enterValue[1].value === '您的回答') {
+                     enterValue[1].value = ''; // 滑鼠點擊的時候移除該內容 removeAttribute 不使用
+                     enterValue[1].classList.add('default__entering') // 使輸入的字為黑色
+                     e.stopPropagation();
+                }
+            })
+
+            window.addEventListener('click',function(){ // 當選項中沒有內容，提示你要輸入
+                if ( enterValue[1].value === '') {
+                    enterValue[1].classList.remove('default__entering')
+                    enterValue[1].classList.add('default__warnning');
+                    enterBlock[1].classList.add('subtitle__warnning')
+                    enterValue[1].value = '您的回答';
+                }
+            })
+            enterValue[1].addEventListener('keypress',function(e){ // 輸入內容，清除提示色
+                enterValue[1].classList.remove('default__warnning')
+                enterBlock[1].classList.remove('subtitle__warnning')
+                enterValue[1].classList.add('default__entering') // 使輸入的字為黑色
+                e.stopPropagation();
+            })
+            */
+        </script>
+    </body>
+</html>

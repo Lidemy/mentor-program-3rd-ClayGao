@@ -1,0 +1,28 @@
+.message {
+    height: 300px;
+    width: 500px;
+    font-size: 72px;
+    font-weight: bold;
+    text-align: center;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -150px;
+    margin-left: -250px;
+}
+
+.message .btn {
+    display: block;
+    position: relative;
+    left: 40%
+}
+
+body {
+    transition: all 1.5s;
+}
+
+.bg-red {
+    background: orange
+}
+
