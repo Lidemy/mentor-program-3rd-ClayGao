@@ -52,11 +52,13 @@
             let standBy = 0;
             let standBy2 = 0;
             //let minusClickTimes = 0;
-            let numberClickTimes = 0;
+           
+            let equals = document.querySelector('.toEqual');
+            //equals.setAttribute('value', e.target.name)
 
             
             document.getElementById('keyinBlock').addEventListener('click',function(e){
-                //console.log(e.target.name)
+                console.log(e.target.name)
                 //console.log(standBy)
                 if (e.target.type !== 'button') {
                     e.preventDefault;
@@ -64,14 +66,15 @@
                     if ( e.target.name === 'number') {
                         num += (e.target.value)
                         sum.setAttribute("value",num)
-                        numberClickTimes++;
                     }
                     if (e.target.name === 'plus') { // 加法
+                        equals.setAttribute('name', e.target.name)
                         standBy += Number(num);
                         sum.setAttribute("value",standBy) // 這樣就有了連加功能了
                         num = ''; // 再次輸入數字時為空
                     }
                     if (e.target.name === 'minus') { // 減法
+                        equals.setAttribute('name', e.target.name)
                         if ( standBy === 0 ) {
                             standBy = Number(num);
                             sum.setAttribute("value",standBy) // 這樣就有了連加功能了
@@ -90,22 +93,28 @@
                         }
                     }
                     if (e.target.name === 'times') { // 乘法
+                        equals.setAttribute('name', e.target.name)
                         if ( standBy === 0) { standBy++}
                         standBy *= Number(num);
                         sum.setAttribute("value",standBy) // 這樣就有了連乘功能了
                         num = ''; // 再次輸入數字時為空
                     }
                     if (e.target.name === 'divide') { // 除法
+                        equals.setAttribute('name', e.target.name)
                         if ( standBy === 0 ) {
                             standBy = Number(num);
                             sum.setAttribute("value",standBy) 
                             num = ''; // 再次輸入數字時為空
-                            console.log('s')
                         } else {
                         standBy = standBy / Number(num);
                         sum.setAttribute("value",standBy) // 這樣就有了連除功能了
                         num = ''; // 再次輸入數字時為空
                         }
+                    }
+                    if (e.target.name === 'AC') { // 乘法
+                        standBy = 0;
+                        sum.setAttribute("value",standBy) // 這樣就有了連乘功能了
+                        num = ''; // 再次輸入數字時為空
                     }
                 }
             })
