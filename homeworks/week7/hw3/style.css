@@ -15,13 +15,15 @@
     position: relative;
     top:23px;
     left: 23px;
-    width: 650px;
+    width: 615px;
     height: 120px;
     border: 3px solid gray;
     border-radius: 30px;
+    font-size: 60px;
+    padding: 0px 15px;
 }
 
-#keyInBlock {
+#keyinBlock {
     position: relative;
     top:46px;
     left: 23px;
@@ -51,7 +53,7 @@
     background:pink #00CCCC;
     cursor: pointer;
     transition: all 0.2s;
-    font-size: 20px;
+    font-size: 25px;
     color:orangered;
 }
 
@@ -62,7 +64,7 @@
     border: 3px solid gray;
     border-radius: 30px;
     background:#00CCCC;
-    font-size: 26px;
+    font-size: 35px;
     font-weight: bold;
     
 }

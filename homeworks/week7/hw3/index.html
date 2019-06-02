@@ -7,38 +7,113 @@
     </header>
     <body>
         <div id="wrapper">
-            <div id="displayBlock">
-                <input id="screen" type="text" readonly="readonly" />
-            </div>
-            <div id="keyInBlock">
-                <div class="row">
-                    <input class="btn" type="button" name="AV" value="AC"/>
-                    <input class="btn toRight" type="button" name="÷" value="÷" />
+            <form>
+                <div id="displayBlock">
+                    <input id="screen" type="text" value="0" dir="rtl" readonly="readonly" />
                 </div>
-                <div class="row">
-                    <input class="btn" type="button" name="7" value="7" />
-                    <input class="btn" type="button" name="8" value="8" />
-                    <input class="btn" type="button" name="9" value="9" />
-                    <input class="btn" type="button" name="x" value="x" />
+                <div id="keyinBlock">
+                    <div class="row">
+                        <input class="btn" type="button" name="AC" value="AC"/>
+                        <input class="btn toRight count" type="button" name=divide value="÷" />
+                    </div>
+                    <div class="row">
+                        <input class="btn number" type="button" name=number value="7" />
+                        <input class="btn number number" type="button" name=number value="8" />
+                        <input class="btn number" type="button" name=number value="9" />
+                        <input class="btn count" type="button" name=times value="x" />
+                    </div>
+                    <div class="row">
+                        <input class="btn number" type="button" name=number value="4" />
+                        <input class="btn number" type="button" name=number value="5" />
+                        <input class="btn number" type="button" name=number value="6" />
+                        <input class="btn count" type="button" name=plus value="+" />
+                    </div>
+                    <div class="row">
+                        <input class="btn number" type="button" name=number value="1" />
+                        <input class="btn number" type="button" name=number value="2" />
+                        <input class="btn number" type="button" name=number value="3" />
+                        <input class="btn count" type="button" name=minus value="-" />
+                    </div>
+                    <div class="row">
+                        <input class="btn number" type="button" name=number value="0" />
+                        <input class="btn number" type="button" name=number value="." />
+                        <input class="btn big toEqual" type="button" name=equals value="=" />
+                    </div>
                 </div>
-                 <div class="row">
-                    <input class="btn" type="button" name="4" value="4" />
-                    <input class="btn" type="button" name="5" value="5" />
-                    <input class="btn" type="button" name="6" value="6" />
-                    <input class="btn" type="button" name="+" value="+" />
-                </div>
-                <div class="row">
-                    <input class="btn" type="button" name="1" value="1" />
-                    <input class="btn" type="button" name="2" value="2" />
-                    <input class="btn" type="button" name="3" value="3" />
-                    <input class="btn" type="button" name="-" value="-" />
-                </div>
-                <div class="row">
-                    <input class="btn" type="button" name="0" value="0" />
-                    <input class="btn" type="button" name="." value="." />
-                    <input class="btn big" type="button" name="=" value="=" />
-                </div>
-            </div>
+            </form>
         </div>
+        <script>
+            const numbers = document.querySelectorAll(".number");
+            var sum = document.getElementById("screen")
+            const counts = document.querySelectorAll(".count")
+            //console.log(sum)
+            let num = '';
+            let num0 = '';
+            let standBy = 0;
+            let standBy2 = 0;
+            //let minusClickTimes = 0;
+            let numberClickTimes = 0;
+
+            
+            document.getElementById('keyinBlock').addEventListener('click',function(e){
+                //console.log(e.target.name)
+                //console.log(standBy)
+                if (e.target.type !== 'button') {
+                    e.preventDefault;
+                } else {
+                    if ( e.target.name === 'number') {
+                        num += (e.target.value)
+                        sum.setAttribute("value",num)
+                        numberClickTimes++;
+                    }
+                    if (e.target.name === 'plus') { // 加法
+                        standBy += Number(num);
+                        sum.setAttribute("value",standBy) // 這樣就有了連加功能了
+                        num = ''; // 再次輸入數字時為空
+                    }
+                    if (e.target.name === 'minus') { // 減法
+                        if ( standBy === 0 ) {
+                            standBy = Number(num);
+                            sum.setAttribute("value",standBy) // 這樣就有了連加功能了
+                            num = ''; // 再次輸入數字時為空
+                        } else {
+                            standBy -= Number(num)
+                            if (standBy >= 0) {
+                                sum.setAttribute("value",standBy) // 這樣就有了連減功能了
+                                num = ''; // 再次輸入數字時為空
+                            } else if ( standBy < 0) {
+                                standBy = Math.abs(standBy)
+                                sum.setAttribute("value",`${standBy}-`) // 這樣就有了連減功能了
+                                standBy *= (-1)
+                                num = ''; // 再次輸入數字時為空
+                            }
+                        }
+                    }
+                    if (e.target.name === 'times') { // 乘法
+                        if ( standBy === 0) { standBy++}
+                        standBy *= Number(num);
+                        sum.setAttribute("value",standBy) // 這樣就有了連乘功能了
+                        num = ''; // 再次輸入數字時為空
+                    }
+                    if (e.target.name === 'divide') { // 除法
+                        if ( standBy === 0 ) {
+                            standBy = Number(num);
+                            sum.setAttribute("value",standBy) 
+                            num = ''; // 再次輸入數字時為空
+                            console.log('s')
+                        } else {
+                        standBy = standBy / Number(num);
+                        sum.setAttribute("value",standBy) // 這樣就有了連除功能了
+                        num = ''; // 再次輸入數字時為空
+                        }
+                    }
+                }
+            })
+
+            
+            
+           
+          
+        </script>
     </body>
 </html>
