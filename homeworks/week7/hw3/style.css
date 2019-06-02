@@ -1,14 +1,19 @@
+body{
+    background: rgb(248, 192, 87);
+}
+
 #wrapper {
     height: 580px;
     width: 700px;
     position: absolute;
     top: 50%;
     left: 50%;
-    margin-top: -250px;
+    margin-top: -290px;
     margin-left: -350px;
     background: pink;
     border: 4px solid gray;
     border-radius: 30px;
+    
 }
 
 #screen {
@@ -19,7 +24,9 @@
     height: 120px;
     border: 3px solid gray;
     border-radius: 30px;
-    font-size: 60px;
+    font-size: 70px;
+    color:rgb(158, 25, 65);
+    font-family: monospace;
     padding: 0px 15px;
 }
 
@@ -50,23 +57,24 @@
     height: 60px;
     border: 3px solid gray;
     border-radius: 30px;
-    background:pink #00CCCC;
+    background: rgb(170, 231, 231);
     cursor: pointer;
     transition: all 0.2s;
-    font-size: 25px;
-    color:orangered;
+    font-size: 40px;
+    font-family: monospace;
+    color:rgb(158, 25, 65);
 }
 
 .btn:hover {
     position: relative;
     width: 150px;
     height: 60px;
-    border: 3px solid gray;
+    border: 4px solid gray;
     border-radius: 30px;
     background:#00CCCC;
-    font-size: 35px;
+    font-size: 45px;
     font-weight: bold;
-    
+    font-family: monospace;
 }
 
 .btn ~ .btn {

@@ -50,7 +50,7 @@
             let num = '';
             let num0 = '';
             let standBy = 0;
-            let standBy2 = 0;
+            //let standBy2 = 0;
             //let minusClickTimes = 0;
            
             let equals = document.querySelector('.toEqual');
@@ -94,13 +94,15 @@
                     }
                     if (e.target.name === 'times') { // 乘法
                         equals.setAttribute('name', e.target.name)
-                        if ( standBy === 0) { standBy++}
+                        if ( Number(num) === 0) { num++ }
+                        if ( standBy === 0) { standBy++ } 
                         standBy *= Number(num);
                         sum.setAttribute("value",standBy) // 這樣就有了連乘功能了
                         num = ''; // 再次輸入數字時為空
                     }
                     if (e.target.name === 'divide') { // 除法
                         equals.setAttribute('name', e.target.name)
+                        if ( Number(num) === 0) { num++ }
                         if ( standBy === 0 ) {
                             standBy = Number(num);
                             sum.setAttribute("value",standBy) 
@@ -111,18 +113,13 @@
                         num = ''; // 再次輸入數字時為空
                         }
                     }
-                    if (e.target.name === 'AC') { // 乘法
+                    if (e.target.name === 'AC') { // 
                         standBy = 0;
-                        sum.setAttribute("value",standBy) // 這樣就有了連乘功能了
+                        sum.setAttribute("value",standBy) 
                         num = ''; // 再次輸入數字時為空
                     }
                 }
             })
-
-            
-            
-           
-          
         </script>
     </body>
 </html>
