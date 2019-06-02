@@ -89,13 +89,14 @@
                     //console.log(enterBlock[i].getAttribute('class'))
                     if ( e.target['value'] === '您的電子郵件' || e.target['value'] === '您的回答') {
                             e.target.classList.add('default__entering') // 使輸入的字為黑色
-                            e.target['value'] = ''; // 滑鼠點擊的時候移除該內容 removeAttribute 不使用，使其為空
+                            e.target['value'] = ''; // 滑鼠點擊的時候移除該內容，不使用 removeAttribute 
                             e.stopImmediatePropagation();
                     }
                 })
 
-               enterValue[i].addEventListener('keydown',function(e){ // 將已經被提示，後來補上文字的 block 恢復白背景
-                   if (e.key === 'Enter') {
+               enterBlock[i].addEventListener('keypress',function(e){ // 將已經被提示，後來補上文字的 block 恢復白背景
+                    console.log(e.target) // 假設 e.key 為 true，也就是說你只要有按下鍵盤就會清出警告顏色
+                   if (e.key) {
                        for ( var i = 0; i < enterValue.length; i++) {
                             if ( e.target['value'] === '您的電子郵件' || e.target['value'] === '您的回答' || e.target['value'] !== '' ) {
                                 enterValue[i].classList.remove('default__warnning');　// 內框警告，讓底線與背景變紅色
@@ -121,7 +122,7 @@
             },true)
 
             document.querySelector('.submit_btn').addEventListener('click',function(e){
-                const ans = 0;
+                let ans = 0;
                 for (var i = 0 , result = 0; i < enterValue.length; i++) {
                     if ( enterValue[i].value === '您的回答' || enterValue[i].value === '您的電子郵件' || enterValue[i].value === '') {
                         ans -= 1;
@@ -132,19 +133,12 @@
                     }
                 } 
                 if ( ans < 0 ) { 
-                    console.log(ans)
                     alert('有問題尚未填寫')
-                } 
-                alert('填寫成功')
-
-            })
-               
-
-
-
-            
-
-    
+                    e.preventDefault;
+                } else {
+                    alert('填寫成功')
+                }
+            }) 
             /* 如果你的目標只有單框，可用以下語法
             enterValue[1].addEventListener('click',function(e){  // 點選時變成輸入狀態
                 //console.log(e.target['name'])
