@@ -36,7 +36,7 @@ body {
     font-size: 13px;
 }
 
-.warnning {
+.warning {
     padding: 10px px;
     font-size: 13px;
     color: red;
@@ -89,7 +89,7 @@ form > :nth-child(7) > :first-child {
     
 }
 
-.default__warnning {
+.default__warning {
     border:none; 
     border-bottom:1px solid rgb(238, 54, 54);
     outline: none;
@@ -99,7 +99,7 @@ form > :nth-child(7) > :first-child {
     background: pink;
 }
 
-.entering__warnning {
+.entering__warning {
     background: pink;
 }
 
