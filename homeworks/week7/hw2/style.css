@@ -14,7 +14,7 @@ body {
 .wrapper {
     background: white;
     border-top: 10px solid orange;
-    height: 1200px;
+    height: 1130px;
     width: 650px;
     position: absolute;
     top:190px;
@@ -37,18 +37,18 @@ body {
 }
 
 .warnning {
-    padding: 10px 0px;
+    padding: 10px px;
     font-size: 13px;
     color: red;
 }
 
-.subtitle {
-    padding: 20px 0px;
+.entering {
+    padding-top: 20px;
     font-size: 20px;
     background: white;
 }
 
-.subtitle＿radio {
+.entering＿radio {
     padding: 20px 0px;
     font-size: 20px;
 }
@@ -89,10 +89,7 @@ form > :nth-child(7) > :first-child {
     
 }
 
-
-
 .default__warnning {
-    
     border:none; 
     border-bottom:1px solid rgb(238, 54, 54);
     outline: none;
@@ -102,11 +99,28 @@ form > :nth-child(7) > :first-child {
     background: pink;
 }
 
-.subtitle__warnning {
+.entering__warnning {
     background: pink;
 }
 
 .radio__btn {
     font-size: 16px;
     padding-top: 30px;
+}
+
+.newTips{
+    padding-top:10px;
+    color: red;
+    font-size:14px;
+    font-weight: bold;
+}
+
+footer {
+    position: relative;
+    top:40px;
+    font-size:14px;
+    padding: 0px 10px;
+    text-align: center;
+    color: gray;
+    font-weight: bold;
 }
