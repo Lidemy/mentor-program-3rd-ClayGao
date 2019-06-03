@@ -1,0 +1,126 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: rgb(245, 239, 230);
+}
+
+.bg1 {
+    background: url("bg1.jpg") no-repeat;
+    background-size: cover;
+    height: 300px;
+    width: 2600px;
+}
+
+.wrapper {
+    background: white;
+    border-top: 10px solid orange;
+    height: 1130px;
+    width: 650px;
+    position: absolute;
+    top:190px;
+    left:50%;
+    margin-left: -325px;
+    padding: 25px 35px;
+}
+
+.title {
+    font-size: 32px;
+    font-weight: bold;
+    font-family: Arial;
+    padding: 10px 0px;
+}
+
+
+.supplyment {
+    line-height: 30px;
+    font-size: 13px;
+}
+
+.warnning {
+    padding: 10px px;
+    font-size: 13px;
+    color: red;
+}
+
+.entering {
+    padding-top: 20px;
+    font-size: 20px;
+    background: white;
+}
+
+.entering＿radio {
+    padding: 20px 0px;
+    font-size: 20px;
+}
+
+span + div {
+    font-size: 13px;
+}
+
+form > :nth-child(7) > :first-child {
+    font-size: 13px;
+}
+
+.star {
+    font-size: 20px;
+    color: red;
+}
+
+.default {
+    background: white;
+    color: gray;
+    border:none; 
+    border-bottom:1px solid #eee;
+    outline: none;
+    width:300px;
+    font-size: 16px;
+    padding-top: 30px;
+    
+}
+
+.default__entering {
+    color:black;
+    border:none; 
+    border-bottom:1px solid #eee;
+    outline: none;
+    width:300px;
+    font-size: 16px;
+    padding-top: 30px;
+    
+}
+
+.default__warnning {
+    border:none; 
+    border-bottom:1px solid rgb(238, 54, 54);
+    outline: none;
+    width:300px;
+    font-size: 16px;
+    padding-top: 30px;
+    background: pink;
+}
+
+.entering__warnning {
+    background: pink;
+}
+
+.radio__btn {
+    font-size: 16px;
+    padding-top: 30px;
+}
+
+.newTips{
+    padding-top:10px;
+    color: red;
+    font-size:14px;
+    font-weight: bold;
+}
+
+footer {
+    position: relative;
+    top:40px;
+    font-size:14px;
+    padding: 0px 10px;
+    text-align: center;
+    color: gray;
+    font-weight: bold;
+}

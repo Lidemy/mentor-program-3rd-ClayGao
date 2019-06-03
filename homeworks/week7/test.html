@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <header>
+
+    </header>
+    <body>
+        <div id="FFF">FFF
+            <div id="FF">FF
+                    <div id="F">F
+                    </div>
+            </div>
+        </div>
+        <script>
+            //冒泡階段
+            document.getElementById("FFF").addEventListener("click",function(e){
+                console.log("FFF 冒泡觸發 !")
+            })
+            document.getElementById("FF").addEventListener("click",function(e){
+                console.log("FF 冒泡觸發 !")
+            })
+            document.getElementById("F").addEventListener("click",function(e){
+                console.log("F 冒泡觸發 !")
+                e.stopImmediatePropagation()
+            })
+            //冒泡階段
+
+            //捕獲階段
+            document.getElementById("FFF").addEventListener("click",function(e){
+                console.log("FFF 捕獲觸發 !")
+            },true)
+            document.getElementById("FF").addEventListener("click",function(e){
+                console.log("FF 捕獲觸發 !")
+            },true)
+            document.getElementById("F").addEventListener("click",function(e){
+                console.log("F 捕獲觸發 !")
+            },true)
+            //捕獲階段
+        </script>
+    </body>
+</html>
