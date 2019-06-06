@@ -1,0 +1,135 @@
+* {
+    font-family: "Comic Sans MS",  sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: yellow;
+}
+.nav {
+    background: orange;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    border:3px solid yellow;
+    border-radius: 10px;
+}
+
+.nav__btn {
+    background : rgb(173,50,35);
+    color: wheat;
+    font-size: 20px;
+    padding: 10px;
+    margin: 5px 10px;
+    border: 0px;
+    border-radius: 10px;
+}
+
+.mid {
+    display: flex;
+    justify-content: flex-start;
+}
+.msg__leave{
+    min-width: 400px;
+    height: 450px;
+    background: orange;
+    border-right:3px solid wheat;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.msg__title{
+    margin: 8px;
+    font-size:20px;
+    font-weight: bolder;
+   
+    color: wheat;
+}
+
+.msg__board {
+    height: 620px;
+    width: 1300px;
+    background: orange;
+    border-left: 4px solid yellow;
+    border-right: 4px solid yellow;
+    border-bottom: 8px solid yellow;
+    flex-wrap:wrap;
+    min-width: 400px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    overflow-y: auto;
+    min-height: 600px;
+    padding-bottom: 14px;
+}
+
+.msg__block {
+    margin-top:10px;
+    margin-right:7px;
+    height: 130px;
+    width: 200px;
+    background:wheat;
+    border: 2px solid gray;
+    border-radius: 8px;
+    font-size:18px;
+    transition: 0.2s all;
+    font-weight: bolder;
+    min-width: 200px;
+    max-height: 150px;
+    word-break: break-all;
+    overflow-y: auto;
+}
+.msg__block:hover {
+    padding:4px;
+    background:wheat;
+    border: 3px solid gray;
+    border-radius: 8px;
+}
+
+.msg__display {
+    margin: 8px;
+}
+
+.msg__text {
+    display: block;
+    min-width: 300px;
+    height: 300px;
+    margin-bottom:8px;
+    word-break: break-all;
+    resize: none;
+    background: wheat;
+    border: 2px solid gray;
+    border-radius: 10px;
+    padding:7px;
+}
+
+
+
+
+.btn {
+    height:40px;
+    width: 40px;
+    background:rgb(178, 192, 55);
+    border: 3px solid rgb(8, 184, 66);
+    border-radius: 50%;
+    transition: all 0.1s;
+    font-size: 8px;
+    font-weight: bold;
+    color:#d31082;
+    margin:20px;
+}
+
+.btn:hover {
+    height:50px;
+    width: 60px;
+    background:palevioletred;
+    border: 5px solid rgb(26, 151, 47);
+    border-radius: 40%;
+    transition: all 0.5s;
+    font-size: 18px;
+    font-weight: bold;
+    color:#48d1cc;
+}
