@@ -6,65 +6,159 @@
         <link rel="stylesheet" type="text/css" href="style.css" />
     </header>
     <body>
-        <form class="msg__leave">
-            <div class="msg__title">
-                留言區
+        <nav class="nav">
+            <input type="button" class="btn end" value="L">
+            <input type="button" class="btn start" value="F">
+            <input type="button" class="btn last" value="＜">
+            <input type="button" class="btn next" value="＞">
+        </nav>
+        <div class="mid">
+            <div class="msg__board">
+                
             </div>
-            <textarea class="msg__text" type="text" ></textarea> 
-            <input class="btn" type="button" value="提交" />
-        </form>
-        <div class="msg__board">
+            <form class="msg__leave">
+                <div class="msg__title">
+                    留言區
+                </div>
+                <textarea class="msg__text" type="text" ></textarea> 
+                <input class="btn" type="button" value="留" />
+            </form>
         </div>
         <script>
             const request = new XMLHttpRequest();
             const URL = "https://lidemy-book-store.herokuapp.com/posts"
-            // 1 . 留言板功能
+            const inTheBegin = "?_limit=20&_sort=id&_order=asc"
+            const inTheEnd = "?_limit=20&_sort=id&_order=desc"
             const msgBoard = document.querySelector('.msg__board')
-            const submit = document.querySelector('.btn')
+            const submit = document.querySelector('form > .btn')
             const msgText = document.querySelector('.msg__text')
-            
-           
-            request.onload = function(){
-                if (request.status >= 200 && request.status < 400) {
-                const response = JSON.parse(request.responseText)
-                    for ( let j = 0; j < response.length; j+=1) {
-                    
-                        const newMsgBlock = document.createElement('div')
-                        newMsgBlock.classList.add('msg__block')
+            const fromEnd = document.querySelector('.end')
+            const fromStart = document.querySelector('.start')
+            const last = document.querySelector('.last')
+            const next = document.querySelector('.next')
+            let limit = 20;
+            let scope = 0;
 
-                        const newMsg = document.createElement('div')
-                        newMsg.classList.add('msg__display')
-                        newMsg.innerText = response[j].content
+            // 1 . 留言板功能
+
             
-                        newMsgBlock.appendChild(newMsg)
-                        msgBoard.appendChild(newMsgBlock)
+            function runRequest(position,num){
+
+                request.onload = function(){
+                    
+                    //console.log(request.responseText)
+                    if (request.status >= 200 && request.status < 400) {
+                    const response = JSON.parse(request.responseText)
+                        for ( let i = num; i < response.length; i+=1) {
+                        
+                            const newMsgBlock = document.createElement('div')
+                            newMsgBlock.classList.add('msg__block')
+
+                            const newMsg = document.createElement('div')
+                            newMsg.classList.add('msg__display')
+                            
+                            newMsg.innerText = `${response[i].id} 樓說 : 
+                                                ${response[i].content}` 
+                
+                            newMsgBlock.appendChild(newMsg)
+                            msgBoard.appendChild(newMsgBlock)
+                            
+                        }
+                    } else {
+                        alert('網頁出了點問題，重新整理一下唷 ! ')
                     }
-                } else {
-                    alert('網頁出了點問題，重新整理一下唷 ! ')
                 }
+
+                
+                request.open('GET',`${URL}${position}`,true);
+                //postMsg(page)
+                request.send();
             }
 
-            request.open('GET',`${URL}?_limit=20&_sort=id&_order=desc`,true);
-            request.send();
+            runRequest('?_limit=20&_sort=id&_order=desc',0)
+            last.addEventListener('click',descl)
+            next.addEventListener('click',descn)
+        
+            function descl(e){
+                if ( limit !== 20) {
+                    msgBoard.innerHTML=''
+                    limit -= 20;
+                    scope -= 20;
+                    runRequest(`?_limit=${limit}&_sort=id&_order=desc`,scope)
+                } else e.preventDefault;
+            }
+            function descn(){
+                msgBoard.innerHTML=''
+                limit += 20;
+                scope += 20;
+                runRequest(`?_limit=${limit}&_sort=id&_order=desc`,scope)
+            }
+        
+            function ascl(e){
+                if ( limit !== 20) {
+                    msgBoard.innerHTML=''
+                    limit -= 20;
+                    scope -= 20;
+                    runRequest(`?_limit=${limit}&_sort=id&_order=asc`,scope)
+                } else e.preventDefault;
+            }
+            function ascn(){
+                msgBoard.innerHTML=''
+                limit += 20;
+                scope += 20;
+                runRequest(`?_limit=${limit}&_sort=id&_order=asc`,scope)
+            }
+ 
+            fromEnd.addEventListener('click',function(){
+                limit = 20;
+                scope = 0;
+                msgBoard.innerHTML=''
+                runRequest('?_limit=20&_sort=id&_order=desc',0)
+                last.removeEventListener('click',descl)
+                next.removeEventListener('click',descn)
+                last.removeEventListener('click',ascl)
+                next.removeEventListener('click',ascn)
+                last.addEventListener('click',descl)
+                next.addEventListener('click',descn)
+            })
+
+            fromStart.addEventListener('click',function(){
+                limit = 20;
+                scope = 0;
+                msgBoard.innerHTML=''
+                runRequest('?_limit=20&_sort=id&_order=asc',0)
+                last.removeEventListener('click',descl)
+                next.removeEventListener('click',descn)
+                last.removeEventListener('click',ascl)
+                next.removeEventListener('click',ascn)
+                last.addEventListener('click',ascl)
+                next.addEventListener('click',ascn)
+            }) 
             //11111111111
 
             //2. 送出表單功能
+        
             submit.addEventListener('click',function(){
-                const msgObj = { content : msgText.value}
+                if ( msgText.value !== '' && msgText.value.length >= 6) {
+                const msgObj = { content : msgText.value }
                 const levelMsg = JSON.stringify(msgObj)
                 request.open('POST',`${URL}`,true);
                 request.setRequestHeader('Content-Type','application/json')
                 request.send(levelMsg);
-                msgText.value = ''
+                msgText.value = '';
+                limit = 20;
+                scope = 0;
+                alert('留言成功 ! ')
+
+
+               
+                } else {
+                    alert('內容不可以少於 6 個字元唷 ! ')
+                }
             })
 
+          
             //22222222222
-                
-                
-      
-            
-            
-            
         </script>
     </body>
 </html>
