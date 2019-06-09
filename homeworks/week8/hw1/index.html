@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<header>
+    <title>歡迎來到抽獎系統，祝您中獎</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <meta charset="utf-8" />
+</header>
+<body>
+    <div class="wrapper">
+        <div class="lucky__draw"> 來抽獎哦
+        </div>
+        <input class="btn" type="button" />
+    </div>
+    <script> // 常數名稱要修改回小寫哦
+        const BACKGROUND = document.querySelector('body')
+        const BUTTON = document.querySelector('.btn')
+        const LUCKY_DRAW = document.querySelector('.lucky__draw')
+        const request = new XMLHttpRequest();
+
+        request.onload = function() {
+            if (request.status >= 200 && request.status < 400) {
+                const json = JSON.parse(request.responseText)
+                console.log(json)
+               
+                    if ( json.prize === 'FIRST') {
+                        gotPrize1();
+                    } else if( json.prize === 'SECOND') {
+                        gotPrize2();
+                    } else if( json.prize === 'THIRD') {
+                        gotPrize3();
+                    } else if (json.prize === 'NONE') {
+                        gotNone();
+                    } else { alert('請重新整理！')}
+                
+            } else {
+                alert("請重新整理 ! ")
+            }
+        }
+
+        BUTTON.addEventListener("mouseover",pointButton)
+        BUTTON.addEventListener("mouseout",levelButton)
+        BUTTON.addEventListener("mousedown",clickButton)
+        BUTTON.addEventListener("mouseup",getLottery) //*
+
+        function pointButton(){
+            BUTTON.value="`･∀･"
+            //LUCKY_DRAW.innerText=""
+            LUCKY_DRAW.innerText="好緊張..."
+        }
+        function levelButton(){
+            BUTTON.value=""
+            LUCKY_DRAW.innerText="不要怕啦..."
+        }
+        function clickButton() {
+            BUTTON.value="｡◕∀◕｡"
+            LUCKY_DRAW.innerText="蹦 ! "
+        }
+        function getLottery() {
+            request.open("GET","https://dvwhnbka7d.execute-api.us-east-1.amazonaws.com/default/lottery",true)
+            request.send();
+            BUTTON.removeEventListener("mouseout",levelButton)
+            BUTTON.value="Ф∇Ф.."
+            BUTTON.removeEventListener("mouseup",getLottery)
+            console.log(request.responseText)
+        }
+        function gotPrize1 () {
+            BACKGROUND.classList.add('prize1')
+            BUTTON.classList.add('btn__prize1')
+            LUCKY_DRAW.innerText="ヽ(✿ﾟ▽ﾟ)ノ ! 恭喜你中頭獎了！日本東京來回雙人遊！"
+            BUTTON.removeEventListener("mouseover",pointButton)
+            BUTTON.removeEventListener("mouseout",levelButton)
+            BUTTON.removeEventListener("mousedown",clickButton)
+            BUTTON.value="✿ﾟ▽ﾟ"
+        }
+
+        function gotPrize2 () {
+            BACKGROUND.classList.add('prize2')
+            BUTTON.classList.add('btn__prize2')
+            LUCKY_DRAW.innerText="(ﾉ>ω<)ﾉ 二獎！90 吋電視一台！"
+            BUTTON.removeEventListener("mouseover",pointButton)
+            BUTTON.removeEventListener("mouseout",levelButton)
+            BUTTON.removeEventListener("mousedown",clickButton)
+            BUTTON.value=">ω<"
+        }
+
+        function gotPrize3 () {
+            BACKGROUND.classList.add('prize3')
+            BUTTON.classList.add('btn__prize3')
+            LUCKY_DRAW.innerText="(,,ﾟДﾟ) 恭喜你抽中三獎：知名YouTuber 簽名握手會入場券一張，bang!"
+            BUTTON.removeEventListener("mouseover",pointButton)
+            BUTTON.removeEventListener("mouseout",levelButton)
+            BUTTON.removeEventListener("mousedown",clickButton)
+            BUTTON.value=",,ﾟДﾟ"
+        }
+
+        function gotNone () {
+            BACKGROUND.classList.add('prize__none')
+            BUTTON.classList.add('btn__noprize')
+            LUCKY_DRAW.innerText="(•ㅂ•)/ 銘謝惠顧!"
+            BUTTON.removeEventListener("mouseover",pointButton)
+            BUTTON.removeEventListener("mouseout",levelButton)
+            BUTTON.removeEventListener("mousedown",clickButton)
+            BUTTON.value="๑´ㅂ`๑"
+        }
+    </script>
+</body>

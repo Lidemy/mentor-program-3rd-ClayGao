@@ -1,0 +1,141 @@
+body {
+    background: orange;
+    transition: all 0.3s;
+}
+
+.prize1 {
+    background: skyblue;
+}
+
+.prize2 {
+    background: rgb(106, 170, 9);
+}
+
+.prize3 {
+    background: rgb(65, 45, 45);
+}
+
+.prize__none {
+    background: black;
+}
+
+.wrapper {
+    position: absolute;
+    top:50%;
+    left:50%;
+    height: 500px;
+    width: 1200px;
+    margin-top: -250px;
+    margin-left: -600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lucky__draw {
+    color: azure;
+    font-size:56px;
+    margin-bottom: 100px;
+}
+
+
+.btn {
+    position: absolute;
+    height:100px;
+    width: 100px;
+    margin-top:100px;
+    background:palevioletred;
+    border: 10px solid grey;
+    border-radius: 50%;
+    transition: all 0.5s;
+    font-size: 30px;
+    font-weight: bold;
+    color:#48d1cc;
+}
+
+
+.btn:hover {
+    height:150px;
+    width: 150px;
+    border: 13px solid rgb(107, 106, 106);
+    background:rgb(214, 96, 136);
+    border-radius: 50%;
+    transition: all 0.5s;
+}
+
+.btn:active {
+    border: 13px solid rgb(107, 106, 106);
+    background:rgb(212, 30, 106);
+    font-size: 36px;
+}
+
+.btn__prize1 {
+    height:180px;
+    width: 180px;
+    font-size: 40px;
+    border: 13px solid rgb(107, 106, 106);
+    background:rgb(252, 4, 107);
+    margin-left:75%
+}
+
+.btn__prize1:hover {
+    height:230px;
+    width: 230px;
+    font-size: 50px;
+    border: 13px solid rgb(107, 106, 106);
+    background:rgb(252, 4, 107);
+    margin-left:75%
+}
+
+.btn__prize2 {
+    height:150px;
+    width: 150px;
+    font-size: 30px;
+    border: 13px solid rgb(107, 106, 106);
+    background:rgb(212, 30, 106);
+    margin-left:-30%
+}
+
+.btn__prize2:hover {
+    height:200px;
+    width: 200px;
+    font-size: 45px;
+    border: 13px solid rgb(107, 106, 106);
+    background:rgb(212, 30, 106);
+    margin-left:-30%
+}
+
+.btn__prize3 {
+    height:100px;
+    width: 100px;
+    font-size: 10px;
+    border: 13px solid rgb(80, 79, 79);
+    background:rgb(80, 79, 79);
+    margin-left:-5%
+}
+
+.btn__prize3:hover {
+    height:150px;
+    width: 150px;
+    font-size: 30px;
+    border: 13px solid rgb(80, 79, 79);
+    background:rgb(80, 79, 79);
+}
+
+.btn__noprize {
+    height:100px;
+    width: 100px;
+    font-size: 10px;
+    border: 13px solid rgb(80, 79, 79);
+    background:rgb(80, 79, 79);
+}
+
+
+
+.btn__noprize:hover {
+    height:150px;
+    width: 150px;
+    font-size: 30px;
+    border: 13px solid rgb(80, 79, 79);
+    background:rgb(80, 79, 79);
+}
