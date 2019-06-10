@@ -1,83 +1,13 @@
 <!DOCTYPE html>
 <html>
-    <header>
-        <title>LOL</title>
-        <meta charset="utf-8" />
-        <link href="main.css" rel="stylesheet">
-    </header>
-    <body>
-        <nav></nav>
-    
-        <div class="game__board">
-       
-        </div>
-        
-        <script>
-            const request = new XMLHttpRequest();
-            const clientID = 'qn5gw8fvspu3jaw1lqymckhb9zqyqx'
-            const board = document.querySelector('.game__board')
-            /*
-            const livesBig = document.querySelector('.lives__big')
-            const lives = document.querySelector('.lives')
-            const livesImg = document.querySelector('.lives__img')
-            const livesText = document.querySelector('.lives__text')
-            */
-
-            request.onload = function(){
-                const streams = JSON.parse(request.response)
-                for (var i = 0;i < 20;i+=1) {
-                    console.log(streams['streams'][i])
-                    console.log(streams['streams'][i].preview.large)
-
-                    const lives = document.createElement('div')
-
-                    if (i <= 1) {
-                        lives.classList.add('lives__big')
-                    }
-                    else {
-                        lives.classList.add('lives')
-                    }
-                    //lives.classList.add('lives')
-                    
-                    
-                    //const livesImg = document.createElement('div')
-                    //livesImg.classList.add('lives__img')
-                    const livesText = document.createElement('div')
-                    livesText.classList.add('lives__text')
-                    const logo = document.createElement('img')
-                    logo.setAttribute('src',`${streams['streams'][i].channel.logo}`)
-                    logo.classList.add('logo')
-                    livesText.innerText = `${streams['streams'][i].channel.name} 
-                                           ${streams['streams'][i].channel.status}`
-                   
-
-                    lives.style.backgroundImage = `url('${streams['streams'][i].preview.large}')`;
-                    lives.style.backgroundSize = '100%'
-                    lives.style.backgroundRepeat = 'no-repeat'
-                    lives.style.cursor = "pointer"
-                    lives.setAttribute("onclick",`location.href="${streams['streams'][i].channel.url}"`)
-                    
-                    //${streams['streams'][i]._links.self}
-
- 
-                    board.appendChild(lives)
-                    //lives.appendChild(livesImg)
-                    lives.appendChild(livesText)
-                    livesText.prepend(logo)
-
-                   
-                    
-
-                    
-                }
-            }
-            request.open('GET','https://api.twitch.tv/kraken/streams?client_id=qn5gw8fvspu3jaw1lqymckhb9zqyqx&game=League%20of%20Legends&stream_type=live',true)
-            request.send()
-
-          
-            
-
-            
-        </script>
-    </body>
+  <header>
+    <title>LOL</title>
+    <meta charset="utf-8" />
+    <link href="main.css" rel="stylesheet">
+  </header>
+  <body>
+    <div class="game__board">
+    </div>
+    <script src="index.js"></script>
+  </body>
 </html>

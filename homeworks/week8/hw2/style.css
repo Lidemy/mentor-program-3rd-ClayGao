@@ -111,26 +111,26 @@ body {
 
 
 .btn {
-    height:40px;
-    width: 40px;
+    height:50px;
+    width: 50px;
     background:rgb(178, 192, 55);
     border: 3px solid rgb(8, 184, 66);
     border-radius: 50%;
     transition: all 0.1s;
     font-size: 8px;
     font-weight: bold;
+    text-align: center;
     color:#d31082;
     margin:20px;
 }
 
 .btn:hover {
-    height:50px;
-    width: 60px;
+
     background:palevioletred;
     border: 5px solid rgb(26, 151, 47);
-    border-radius: 40%;
+    border-radius: 45%;
     transition: all 0.5s;
-    font-size: 18px;
+    text-align: center;
     font-weight: bold;
     color:#48d1cc;
 }

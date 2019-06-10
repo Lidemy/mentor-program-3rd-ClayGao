@@ -2,11 +2,11 @@ body {
     margin: 0;
     padding: 0;
     background-image: url('./bg1.jpg');
-    background-size:contain;
+    background-size:cover;
     background-repeat:no-repeat;
     background-color: black;
     display: flex;
-    justify-content: cover;
+    justify-content: center;
 }
 
 .game__board {

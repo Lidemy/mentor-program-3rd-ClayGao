@@ -4,19 +4,34 @@ body {
 }
 
 .prize1 {
-    background: skyblue;
+    background: url('./pz1.jpg');
+    background-size:50%;
+    background-repeat:no-repeat;
+    background-color: rgb(135, 206, 234);
 }
 
 .prize2 {
-    background: rgb(106, 170, 9);
+    background: url('./pz2.jpg');
+    background-size:200px;
 }
 
 .prize3 {
-    background: rgb(65, 45, 45);
+    background: url('./pz3.jpg');
+    background-size:200px;
 }
 
 .prize__none {
-    background: black;
+    background: url('./pz_n.jpg');
+    background-size:200px;
+}
+
+.img__size {
+    margin: 2px 7px;
+    padding: 0px;
+    height: 40px ;
+    width: 40px ;
+    border: 1.2px solid gray;
+    border-radius: 50%;
 }
 
 .wrapper {
@@ -33,9 +48,14 @@ body {
 }
 
 .lucky__draw {
-    color: azure;
+    color: black;
     font-size:56px;
+    font-weight: bold;
     margin-bottom: 100px;
+    background: rgba(230, 222, 209,0.8) ;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
 }
 
 
@@ -75,7 +95,7 @@ body {
     font-size: 40px;
     border: 13px solid rgb(107, 106, 106);
     background:rgb(252, 4, 107);
-    margin-left:75%
+    margin-left:30%
 }
 
 .btn__prize1:hover {
@@ -84,7 +104,7 @@ body {
     font-size: 50px;
     border: 13px solid rgb(107, 106, 106);
     background:rgb(252, 4, 107);
-    margin-left:75%
+    margin-left:30%
 }
 
 .btn__prize2 {
@@ -129,8 +149,6 @@ body {
     border: 13px solid rgb(80, 79, 79);
     background:rgb(80, 79, 79);
 }
-
-
 
 .btn__noprize:hover {
     height:150px;
