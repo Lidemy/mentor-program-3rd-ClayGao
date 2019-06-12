@@ -1,0 +1,12 @@
+.register {
+    border: 2px solid gray;
+    padding: 10px;
+    text-align: left;
+}
+
+form > div{
+    margin-top: 10px;
+}
+
+
+
