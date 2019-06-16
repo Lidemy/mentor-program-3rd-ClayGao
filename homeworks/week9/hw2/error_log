@@ -1,0 +1,4 @@
+[16-Jun-2019 13:25:37 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/gk0bzeoh7dod/public_html/group5/claygao/conn.php on line 7
+[16-Jun-2019 13:25:37 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/gk0bzeoh7dod/public_html/group5/claygao/conn.php on line 8
+[16-Jun-2019 13:31:12 UTC] PHP Warning:  require_once(./claygao_comments.php): failed to open stream: No such file or directory in /home/gk0bzeoh7dod/public_html/group5/claygao/handle_identify.php on line 12
+[16-Jun-2019 13:31:12 UTC] PHP Fatal error:  require_once(): Failed opening required './claygao_comments.php' (include_path='.:/opt/alt/php71/usr/share/pear') in /home/gk0bzeoh7dod/public_html/group5/claygao/handle_identify.php on line 12
