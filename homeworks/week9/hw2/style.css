@@ -1,0 +1,67 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: black;
+    color:wheat;
+}
+
+
+.wrapper {
+    width: 700px;
+    min-width: 700px;
+    height:  auto;
+    margin: 0 auto;
+    margin-right: auto;
+    margin-left: auto;
+    background:  black;
+    text-align: center;
+    padding: 20px;  
+}
+
+.story {
+    border: 2px solid gray;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: left;
+    word-break: break-all;
+}
+
+.story ~ .story {
+    margin-top: 25px;
+}
+
+.write {
+    border: 2px solid gray;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.enter__title {
+    background: wheat;
+}
+
+.enter__content {
+    height: 180px;
+    width:500px;
+    background: wheat;
+    word-break: break-all;
+    resize: none;
+}
+
+.btn {
+    margin: 5px;
+    padding:5px;
+    border: 2px solid gray;
+    background: wheat;
+}
+
+.register {
+    border:2px solid gray;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: left;
+}
+
+form > div{
+    margin-top: 10px;
+}
