@@ -1,0 +1,221 @@
+body {
+    background: url('./bg.jpg')  center center fixed no-repeat;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: rgba(70, 53, 53, 0.6);
+    height: 51.5px;
+    display: flex;
+    align-items: center;
+    font-family: sans-serif;
+    color: white;
+    font-size: 15px;
+    font-weight: bolder;
+}
+
+nav span a {
+    color: white;
+}
+
+nav a {
+    padding: 18px 24px;
+    text-decoration:none;
+}
+
+nav a:hover:nth-child(n) {
+    background-color: rgb(255, 120, 127);
+}
+
+nav a:hover:nth-child(2n) {
+    background-color: rgb(153, 186, 1);
+}
+
+nav a:hover:nth-child(3n) {
+    background-color: rgb(2, 87, 12);
+}
+
+
+
+a:visited {
+    color: white;
+}	
+
+.member {
+    position: absolute;
+    right:0px;
+}
+
+.total__pages {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    margin: 0px;
+    background-color:rgba(70, 53, 53, 0.6);
+    padding:10px 12px;
+    font-size: 16px;
+    font-weight: bolder;
+}
+
+.pages__bar {
+    color: white;
+    position:fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+
+.page__button {
+    color: white;
+    text-decoration:none;
+    display: inline-block;
+    padding:10px 12px;
+    font-size: 16px;
+    font-weight: bolder;
+    transition: 0.3s all;
+    background-color:rgba(70, 53, 53, 0.6);
+}
+
+
+.pages__bar a:hover:nth-child(n) {
+    background-color: rgb(153, 186, 1);
+}
+
+.pages__bar a:hover:nth-child(2n) {
+    background-color: rgb(2, 87, 12);
+}
+
+.pages__bar a:hover:nth-child(3n) {
+    background-color: rgb(255, 120, 127);
+}
+
+
+
+.container {
+    background-color: rgba(70, 53, 53, 0.3);
+    height: auto;
+    min-height: 300px;
+    width: 900px;
+    margin-top: 20px;
+    margin: 40px auto;
+    margin-bottom: 80px;
+}
+
+
+.messages {
+    margin: 0 auto;
+    padding: 20px;
+    height: auto;
+    width: 800px;
+    min-width: 800px;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.msg {
+    padding:15px;
+    height: auto;
+    width: 650px;
+    background-color: transparent;
+    color:white;
+    border : 0px;
+    border-bottom: 1px solid wheat;
+    text-align: left;
+    word-break: break-all;
+    font-family: sans-serif;
+}
+
+.msg ~ .msg {
+    margin-top: 20px;
+}
+
+.msg div:first-child {
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+.msg div:nth-child(4) {
+    font-size: 8px;
+}
+
+.edit {
+    font-weight: bolder;
+    margin-top: 15px;
+    text-align: right;
+}
+
+.edit a {
+    color: white;
+    margin-left: 10px;
+}
+
+
+
+.edit a:visited {
+    color: white;
+}	
+
+
+.form__style {
+    padding:20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.form__style input {
+    background: transparent;
+    margin-bottom:50px;
+    font-family: sans-serif;
+    font-size: 20px;
+    border: none;
+    border-bottom: 1px solid white;
+    outline: none;
+    color: white;
+}
+
+textarea {
+    margin:20px;
+    padding: 10px;
+    height: 180px;
+    width:500px;
+    word-break: break-all;
+    resize: none;
+    background-color: transparent;
+    font-family: sans-serif;
+    font-size: 20px;
+    color:white;
+    border: 1px solid white;
+    outline: none;
+}
+
+::-webkit-input-placeholder {
+    color:white;
+}
+
+.form__style input:focus {
+    border-bottom: 2px solid white;
+}
+
+textarea:focus {
+    border: 2px solid white;
+}
+
+button {
+    color: white;
+    font-size: 20px;
+    font-weight: bolder;
+    padding:5px 15px;
+    background-color:transparent;
+    border: 1px solid white;
+    cursor: pointer;
+}
