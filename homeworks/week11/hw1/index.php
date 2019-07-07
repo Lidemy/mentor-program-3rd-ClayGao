@@ -58,7 +58,7 @@
       if ($total > 0) {
         while($row = $result->fetch_assoc()) {
           echo "<div class='msg'>";
-          echo "<div>" . $row['name'] . ":</div>";
+          echo "<div>" . $row['nickname'] . ":</div>";
           echo "<h1>" . $row['title'] . "</h1>";
           echo "<p>" . $row['content'] . "</p>";
           echo "<div> Final edit at " .$row['created_at'] . "</div>";
