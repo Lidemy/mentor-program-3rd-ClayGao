@@ -9,7 +9,6 @@
     echo "<script>alert('帳號密碼未輸入 !');parent.location.href='./sign_in.php';</script>";
   } else {
     // 比對使用者資料庫中該使用者的密碼是否相符
-    //$sql = "SELECT * FROM `claygao_users` WHERE `id_number` = '$idNumberSignIn'";
     $stmt = $conn->prepare("SELECT * FROM `claygao_users` WHERE `id_number` = ?");
     $stmt->bind_param("s", $idNumberSignIn);
     $stmt->execute();
