@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <title>RWD 網格</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </head>
+  <body>
+  <div class="container">
+    <div class="taskInput">
+      <div class="taskEnter">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="input">Send</span>
+          </div>
+          <input type="text" class="input__block form-control">
+        </div>
+      </div>
+      <input type="button" class="btn btn-outline-success" name='success' value='一般'>
+      <input type="button" class="btn btn-outline-warning" name='warning' value='注意'>
+      <input type="button" class="btn btn-outline-danger" name="danger" value='超重要 ! 不解釋'>
+      <input type="button" class="btn btn-outline-primary" name="primary" value='本週必完成'>
+      <input type="button" class="btn btn-outline-secondary" name="secondary" value='有空再做'>
+      
+    </div>
+    <hr>
+    <div class="taskDoing">
+      <div class="taskTmp">
+        <div class="card" style="width: 18rem;">
+          <div class="card-header">
+            to do
+          </div>
+        <ul class="list-todo list-group list-group-flush">
+          
+        </ul>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="taskFinish">
+      <div class="taskTmp">
+        <div class="card" style="width: 18rem;">
+        <div class="card-header">
+          Finished
+        </div>
+        <ul class="list-done list-group list-group-flush">
+        
+        </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const input = $('.input__block')
+    let statusValue = '';
+    let statusType = '';
+     
+    $('.taskInput').click(function(e){
+      if ( e.target.type !== 'button' ) 
+      return;
+      statusType =  e.target.name;
+      statusValue = e.target.value;
+
+      // 輸入框會隨著不同的 tag 而變色
+      switch (statusType) {
+        case 'success':
+          input.css('background-color','rgb(147, 211, 162)');
+          break;
+        case 'warning':
+          input.css('background-color','rgb(255, 224, 131)');
+          break;
+        case 'danger':
+          input.css('background-color','rgb(237, 154, 162)');
+          break;
+        case 'primary':
+          input.css('background-color','rgb(127, 189, 255)');
+          break;
+        case 'secondary':
+          input.css('background-color','rgb(181, 186, 190)');
+          break;
+       }    
+       //console.log( statusType,statusValue)
+    })
+
+    input.keydown(function taskSend(e){
+      if (e.key === 'Enter' && e.target.value !== '') {
+
+        let $newTask = $(`<li class="list-group-item">
+                            <input class="checkbox" type="checkbox">
+                            ${e.target.value}
+                            <span class="badge badge-${statusType}">
+                                ${statusValue}
+                            </span>
+                            <span style="display: none" class="btn-group" role="group" aria-label="Basic example">
+                                <input type="button" class="btn btn-secondary" value="Finish">
+                                <input type="button" class="btn btn-secondary" value="Delete">
+                            </span>
+                            </li>
+                            `);    
+
+        $('.list-todo').append($newTask);
+        e.target.value = ''
+
+        $('.list-todo > li').click(function(e){
+          if (e.target.type !== 'checkbox') return 
+          if (e.target.checked) {
+            $(this).css('text-decoration','line-through')
+            $('.list-done').append($(this)) // 好玩的功能，不知道為何原本的 task 會被移轉
+          } else {
+            $(this).css('text-decoration','none')
+            $('.list-todo').append($(this))
+          }
+        })
+      } 
+    })
+  </script>
+  </body>
+</html>
