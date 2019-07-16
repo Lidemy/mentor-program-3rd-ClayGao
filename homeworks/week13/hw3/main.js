@@ -1,5 +1,3 @@
-/* eslint no-use-before-define: ["error", { "variables": false }] */
-
 let loginStatus = 0;
 let currectUser = '';
 
