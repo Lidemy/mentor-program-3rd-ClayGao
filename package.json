@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint ./homeworks/**/*.js --fix",
+    "lint": "eslint ./homeworks/**/*.js",
     "test": "jest"
   },
   "husky": {
