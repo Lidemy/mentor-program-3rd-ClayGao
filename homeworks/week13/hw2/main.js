@@ -1,39 +1,39 @@
-const input = $('.input__block')
-    let statusValue = '';
-    let statusType = '';
-     
-$(document).ready(function(){ 
-    $('.taskInput').click(function(e){
-      if ( e.target.type !== 'button' ) 
-      return;
-      statusType =  e.target.name;
-      statusValue = e.target.value;
+const input = $('.input__block');
+let statusValue = '';
+let statusType = '';
 
-      // 輸入框會隨著不同的 tag 而變色
-      switch (statusType) {
-        case 'success':
-          input.css('background-color','rgb(147, 211, 162)');
-          break;
-        case 'warning':
-          input.css('background-color','rgb(255, 224, 131)');
-          break;
-        case 'danger':
-          input.css('background-color','rgb(237, 154, 162)');
-          break;
-        case 'primary':
-          input.css('background-color','rgb(127, 189, 255)');
-          break;
-        case 'secondary':
-          input.css('background-color','rgb(181, 186, 190)');
-          break;
-       }    
-       //console.log( statusType,statusValue)
-    })
+$(document).ready(() => {
+  $('.taskInput').click((e) => {
+    if (e.target.type !== 'button') { return; }
+    statusType = e.target.name;
+    statusValue = e.target.value;
 
-    input.keydown(function taskSend(e){
-      if (e.key === 'Enter' && e.target.value !== '') {
+    // 輸入框會隨著不同的 tag 而變色
+    switch (statusType) {
+      case 'success':
+        input.css('background-color', 'rgb(147, 211, 162)');
+        break;
+      case 'warning':
+        input.css('background-color', 'rgb(255, 224, 131)');
+        break;
+      case 'danger':
+        input.css('background-color', 'rgb(237, 154, 162)');
+        break;
+      case 'primary':
+        input.css('background-color', 'rgb(127, 189, 255)');
+        break;
+      case 'secondary':
+        input.css('background-color', 'rgb(181, 186, 190)');
+        break;
 
-        let $newTask = $(`<li class="list-group-item">
+      default:
+    }
+    // console.log( statusType,statusValue)
+  });
+
+  input.keydown((e) => {
+    if (e.key === 'Enter' && e.target.value !== '') {
+      const $newTask = $(`<li class="list-group-item">
                             <input class="checkbox" type="checkbox">
                             ${e.target.value}
                             <span class="badge badge-${statusType}">
@@ -44,21 +44,21 @@ $(document).ready(function(){
                                 <input type="button" class="btn btn-secondary" value="Delete">
                             </span>
                             </li>
-                            `);    
+                            `);
 
-        $('.list-todo').append($newTask);
-        e.target.value = ''
+      $('.list-todo').append($newTask);
+      e.target.value = '';
 
-        $('.list-todo > li').click(function(e){
-          if (e.target.type !== 'checkbox') return 
-          if (e.target.checked) {
-            $(this).css('text-decoration','line-through')
-            $('.list-done').append($(this)) // 有趣的部分是，不知道為何原本的 task 會被移轉
-          } else {
-            $(this).css('text-decoration','none')
-            $('.list-todo').append($(this))
-          }
-        })
-      } 
-    })
-})
+      $('.list-todo > li').click(function (event) {
+        if (event.target.type !== 'checkbox') return;
+        if (event.target.checked) {
+          $(this).css('text-decoration', 'line-through');
+          $('.list-done').append($(this)); // 有趣的部分是，不知道為何原本的 task 會被移轉
+        } else {
+          $(this).css('text-decoration', 'none');
+          $('.list-todo').append($(this));
+        }
+      });
+    }
+  });
+});

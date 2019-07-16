@@ -3,7 +3,8 @@ module.exports = {
     browser: true,
     es6: true,
     node: true,
-    jest: true
+    jest: true,
+    jquery: true
   },
   extends: 'airbnb',
   globals: {
@@ -21,5 +22,6 @@ module.exports = {
   ],
   rules: {
     "no-console": "off"
+    //"linebreak-style": [0 ,"error", "windows"]
   },
 };
