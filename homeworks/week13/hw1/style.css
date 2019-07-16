@@ -3,37 +3,40 @@
     width: 960px;
     margin: 0 auto;
     min-width: 960px;
-    background-color: wheat;
+    text-align: center;
 }
 
-.container >div ~ div {
-    margin-top: 5px;
-}
-
-.container > div > div {
+.grid > div  {
     border:1px solid black;
     box-sizing:border-box;
 }
 
-.col-1 { display: grid; grid-template-columns: repeat(1, 1fr); }
-.col-2 { display: grid; grid-template-columns: repeat(2, 1fr); }
-.col-3 { display: grid; grid-template-columns: repeat(3, 1fr); }
-.col-4 { display: grid; grid-template-columns: repeat(4, 1fr); }
-.col-5 { display: grid; grid-template-columns: repeat(5, 1fr); }
-.col-6 { display: grid; grid-template-columns: repeat(6, 1fr); }
-.col-7 { display: grid; grid-template-columns: repeat(7, 1fr); }
-.col-8 { display: grid; grid-template-columns: repeat(8, 1fr); }
-.col-9 { display: grid; grid-template-columns: repeat(9, 1fr); }
-.col-10 { display: grid; grid-template-columns: repeat(10, 1fr); }
-.col-11 { display: grid; grid-template-columns: repeat(11, 1fr); }
-.col-12 { display: grid; grid-template-columns: repeat(12, 1fr); }
-
-@media screen and (max-width: 720px) { 
-    .col-1,.col-2,.col-3,.col-4,.col-5,.col-6,.col-7,.col-8,.col-9,.col-10,.col-11,.col-12 {grid-template-columns: repeat(1, 1fr);} 
+.grid {
+    display: grid; 
+    grid-template-columns: repeat(12, 1fr); 
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
 }
 
-/*　本來想這樣寫，但不好套用
-@media screen and (max-width: 720px) { 
-    .container > div {grid-template-columns: repeat(1, 1fr);} 
+.grid > div {
+    background-color: pink;
 }
-*/
+
+.col-1 { grid-column: span 1 }
+.col-2 { grid-column: span 2 }
+.col-3 { grid-column: span 3 }
+.col-4 { grid-column: span 4 }
+.col-5 { grid-column: span 5 }
+.col-6 { grid-column: span 6 }
+.col-7 { grid-column: span 7 }
+.col-8 { grid-column: span 8 }
+.col-9 { grid-column: span 9 }
+.col-10 { grid-column: span 10 }
+.col-11 { grid-column: span 11 }
+.col-12 { grid-column: span 12 }
+
+
+@media screen and (max-width: 720px) { 
+    .col-1,.col-2,.col-3,.col-4,.col-5,.col-6,.col-7,.col-8,.col-9,.col-10,.col-11,.col-12 {grid-column: 1/13;} 
+}
+
