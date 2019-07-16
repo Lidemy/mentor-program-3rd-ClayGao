@@ -5,11 +5,11 @@
 <!DOCTYPE html>
   <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./css/style.css" />
     <title>Love Message Board</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!-- JS -->
-    <script src="./main.js"></script>
+    <script src="./js/main.js"></script>
   </head>
   <!-- body -->
   <body>
@@ -22,7 +22,7 @@
       <a id='write'>Write</a>
       <span class='member'>
       <span>Hi <span id="member_name"><?php echo $_SESSION['nickname'] ?></span> Share your story ! </span>
-      <a href='./sign_out.php'>Sign out</a>
+      <a href='./handling/sign_out.php'>Sign out</a>
       </span>
     <?php } else { ?>
       <span class='member'>

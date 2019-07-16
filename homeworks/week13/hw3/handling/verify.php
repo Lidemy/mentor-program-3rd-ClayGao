@@ -5,6 +5,5 @@
   } else {
     $arr = array( 'islogin' => 0);
   }
-
   echo json_encode($arr);
 ?>

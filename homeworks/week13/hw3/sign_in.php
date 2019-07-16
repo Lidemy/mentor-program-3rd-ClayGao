@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <head>
   <meta charset="utf-8" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="./css/style.css" />
   <title>Love Message Board</title>
 </head>
 <body>
@@ -16,7 +16,7 @@
   </nav>
   <main>
     <div class="container">
-    <form class="form__style" method="POST" action="handle_sign_in.php">
+    <form class="form__style" method="POST" action="./handling/handle_sign_in.php">
       Username : <input type="text" autocomplete="off" name="username">
       Password : <input type="password" autocomplete="off" name="password">
       <button>Send</button>

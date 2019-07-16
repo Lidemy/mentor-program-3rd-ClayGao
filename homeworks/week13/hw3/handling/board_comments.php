@@ -1,5 +1,5 @@
 <?php
-  require_once('./conn.php');
+  require_once('../conn.php');
 
   function XSSDef($content) {
     return htmlspecialchars($content,ENT_QUOTES,'utf-8');

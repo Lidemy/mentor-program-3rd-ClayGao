@@ -5,7 +5,7 @@ let currectUser = '';
 function islogin() {
   $.ajax({
     type: 'GET',
-    url: './verify.php',
+    url: './handling/verify.php',
     async: false,
     success(resp) {
       const status = JSON.parse(resp);
@@ -26,7 +26,7 @@ function InputAjax() {
     } else {
       $.ajax({
         type: 'POST',
-        url: './handle_write.php',
+        url: './handling/handle_write.php',
         data: {
           title: newTitle,
           content: newContent,
@@ -57,7 +57,7 @@ function subInputAjax() {
     const idSub1 = $(e.target).find('input[name=id_sub1]').val();
     $.ajax({
       type: 'POST',
-      url: './handle_subwrite.php',
+      url: './handling/handle_subwrite.php',
       data: {
         sub_content: subContent,
         sender: theSender,
@@ -78,16 +78,15 @@ function subInputAjax() {
 // 刪除按鈕
 function deleteAjax() {
   $('.edit input').click((e) => {
-    e.preventDefault();
-    const id = $('.edit input').attr('name');
+    const id = $(e.target).attr('name');
     $.ajax({
       type: 'POST',
-      url: './handle_delete.php',
+      url: './handling/handle_delete.php',
       data: {
         id,
       },
       success() {
-        $('.edit input').parents('.msg').css('display', 'none');
+        $(e.target).parents('.msg').css('display', 'none');
       },
     });
   });
@@ -98,11 +97,11 @@ function getComments() {
   $.when(
     $.ajax({
       type: 'GET',
-      url: './board_comments.php',
+      url: './handling/board_comments.php',
     }),
     $.ajax({
       type: 'GET',
-      url: './board_comments_sub1.php',
+      url: './handling/board_comments_sub1.php',
     }),
   )
     .then((resp1, resp2) => {
