@@ -76,7 +76,7 @@
 
 ![](./gcp/13.jpg)
 
-名稱 : 這邊沒有特別規定，我自己是打 myboard
+名稱 : 這邊要小寫
 
 區域 : 有台灣可以選就選台灣啦
 
@@ -192,6 +192,8 @@ $pwd //home/你的帳號名稱
 
 ![](./gcp/22.jpg)
 
+var 這個資料夾裡面是我們等等要使用的地方
+
 ******
 
 使用 cd 切換到 /var/www/html 底下之後可以看到 index.html，這個頁面就是我們剛剛安裝 Apache 成功之後看到的首頁
@@ -225,6 +227,9 @@ sudo apt-get install mysql-server php7.0-mysql php-pear
 ```php
 sudo mysql_secure_installation
 ```
+這邊內容待補
+
+*******
 
 ## 安裝 phpMyAdmin ( 可選但建議安裝 )
 
@@ -356,8 +361,9 @@ drwxr-xr-x 就是目前的權限，「-」的部分是被遮蓋掉的
 
 若要回到原本權限，可輸入下列指令
 
-> sudo chmod 755 -R /var/www
-
+```
+sudo chmod 755 -R /var/www
+```
 ******
 
 # 加入 GitHub repo
@@ -368,11 +374,13 @@ drwxr-xr-x 就是目前的權限，「-」的部分是被遮蓋掉的
 
 如果你沒有執行剛剛的開啟權限的話，git clone 會有以下回覆，表示權限不夠 ( Permission denied )
 
-> fatal: could not create work tree dir 'mentor-program-3rd-ClayGao': Permission denied
+```
+fatal: could not create work tree dir 'mentor-program-3rd-ClayGao': Permission denied
+```
 
-# 使用本地 CLI 代替 G clude
+# 使用本地 CLI 操控 VM，而不是用瀏覽器 Cloud Shell
 
-在上述的步驟中，都是使用 GCP 內建的小黑窗，這邊我直接操作一次如何用 Windows 的 cmder 來遠端處理虛擬機
+在上述的步驟中，都是使用 GCP 內建的小黑窗，這邊直接操作一次如何用 Windows 的 cmder 來遠端處理虛擬機
 
 在這之前你可以搭配[官方文件](https://cloud.google.com/sdk/docs/quickstart-windows)一起看。
 
