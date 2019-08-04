@@ -1,0 +1,78 @@
+@import 'variable';
+@import 'mixin';
+
+body{
+    background: $bg-color;
+}
+
+#wrapper {
+    @include size(580px, 800px);
+    @include border(4px soild gray,10px);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -290px;
+    margin-left: -350px;
+    background: $main-color;
+}
+
+#screen {
+    @include size(120px, 710px);
+    @include border(3px solid gray, 20px);
+    @include font(70px, rgb(158, 25, 65),null,moonspace);
+    position: relative;
+    top:23px;
+    left: 23px;
+    padding: 0px 15px;
+}
+
+#keyinBlock {
+    @include size(300px, 650px);
+    @include border(null, 30px);
+    position: relative;
+    top:46px;
+    left: 23px;
+}
+
+.row {
+    @include size(60px, 750px);
+    @include border(null, 30px);
+    position: relative;
+    & ~ &{
+        margin-top:20px;
+    }
+}
+
+.btn {
+    @include size(60px, 150px);
+    @include border(3px solid gray, 30px);
+    @include font(40px, $btn-font-color,null,moonspace);
+    position: relative;
+    background: $btn-color;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-left: 30px;
+    &:hover {
+        background:#00CCCC;
+        font-size: 45px;
+        font-weight: bold;
+        font-family: monospace;
+    }
+    & ~ & {
+        margin-left: 25.5px;
+    }
+    &.toRight {
+        margin-left: 385px;
+    }
+    &.big {
+        width: 328px;
+        background: orange;
+        color:pink;
+        &:hover {
+            background: orangered;
+        }
+    }
+}
+
+
+
