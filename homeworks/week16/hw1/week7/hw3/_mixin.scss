@@ -1,0 +1,18 @@
+
+@mixin size($height, $width) {
+    height: $height;
+    width: $width;
+}
+
+@mixin font($size, $color, $weight, $family) {
+    font-size: $size;
+    color: $color;
+    font-weight: $weight;
+    font-family: $family;
+}
+
+@mixin border($border..., $redius) {
+    border: $border {
+        redius: $redius;
+    };
+}
