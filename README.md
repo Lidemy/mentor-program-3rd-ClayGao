@@ -211,6 +211,7 @@ Mindset 建立：
 
 1. [NET101] 網路基礎概論（搭配 JS 實作練習）：全部
 2. [CS101] 初心者的計概與 coding 火球術：4-1 ~ 4-4
+3. [從拉麵店的販賣機理解什麼是 API](https://medium.com/@hulitw/ramen-and-api-6238437dc544)
 
 #### 自我檢測
 
@@ -360,7 +361,7 @@ HTML 的部分就簡單帶過幾個常見的 tag，帶到 head 的一些屬性�
 
 這週的課程會講解 PHP 基本觀念、語法，並且教大家安裝設定 MySQL，寫出簡單的 CRUD 應用。
 
-指定教材：
+指定教材（學習順序請參考 Lidemy.com 上的說明）：
 
 1. 程式導師實驗計畫：Lesson 5-1 之後端基礎  
 2. 程式導師實驗計畫：Lesson 5-2 之資料庫  
@@ -422,7 +423,7 @@ HTML 的部分就簡單帶過幾個常見的 tag，帶到 head 的一些屬性�
 
 ### 闖關遊戲
 
-一共十關，看你能闖到第幾關。（連結待補）
+一共十關，看你能闖到第幾關：[r3:0 異世界網站挑戰](https://r30challenge.herokuapp.com/)（特別感謝 @minw 製作遊戲）。
 
 [HW10 作業連結](/homeworks/week10)
 
@@ -432,7 +433,7 @@ HTML 的部分就簡單帶過幾個常見的 tag，帶到 head 的一些屬性�
 
 在這過程中你會學到許多新的後端概念，也會幫留言板加上更多更多的新功能！
 
-指定教材：
+指定教材（學習順序請參考 Lidemy.com 上的說明）：
 
 1. [BE101] 用 PHP 與 MySQL 學習後端基礎：全部
 2. [CS101] 初心者的計概與 coding 火球術：4-3、5-4
@@ -455,7 +456,7 @@ HTML 的部分就簡單帶過幾個常見的 tag，帶到 head 的一些屬性�
 
 無論你是前端還是後端，都必須時時刻刻在心裡惦記著資訊安全的概念，總結為一句話就是：「不要相信任何來自 client 端的資料」，只要能做到這點，其實就可以阻止掉很多的惡意攻擊。
 
-指定教材：
+指定教材（學習順序請參考 Lidemy.com 上的說明）：
 
 1. [BE101] 用 PHP 與 MySQL 學習後端基礎：全部
 2. 程式導師實驗計畫：Lesson 6-2 之 Web Security 
@@ -525,7 +526,10 @@ HTML 的部分就簡單帶過幾個常見的 tag，帶到 head 的一些屬性�
 
 最後也會補齊跟資料庫的一些知識，像是 ACID、Transaction、View 以及 Stored procedure。
 
-指定教材：
+這週也要特別感謝 [gandi](https://www.gandi.net/) 連續三期全額贊助了網域的費用 <(_ _)>。
+
+
+指定教材（學習順序請參考 Lidemy.com 上的說明）：
 
 1. 程式導師實驗計畫：Lesson 8-2 之資料庫  
 2. 程式導師實驗計畫第二期：Week8-1 後端基礎（下）
@@ -580,12 +584,15 @@ HTML 的部分就簡單帶過幾個常見的 tag，帶到 head 的一些屬性�
 5. Promise
 6. 部署
 
-這次提供兩個跟資訊安全相關的練習網站，都跟我們以前複習週的模式差不多，可以一直闖關：
+這次提供三個跟資訊安全相關的練習網站，都跟我們以前複習週的模式差不多，可以一直闖關：
 
-1. http://xss-quiz.int21h.jp/
+1. https://xss-game.appspot.com（[解題影片，有雷](https://www.youtube.com/watch?v=MMMkvHwqPRY)）
 2. http://www.hackertest.net/
+3. http://xss-quiz.int21h.jp/ （這個可能會被 Chrome 擋下來...可以用 Firefox 或是其他網站玩）
 
 祝大家玩得開心！
+
+另外，這一週的作業除了心得以外，也提供了一個跟以往不太一樣的測驗：[網站前後端開發基礎測試](https://forms.gle/qvrQc9pWWNGaoGpn8)，一共十題簡答題，Google 表單在送出之後可以看見參考解答，能夠自己對答案。
 
 [HW15 作業連結](/homeworks/week15)
 
@@ -605,7 +612,7 @@ HTML 的部分就簡單帶過幾個常見的 tag，帶到 head 的一些屬性�
 
 快取對工程師來說是一定要理解的概念，前端有前端的快取，後端也有後端的。這週主要會著重在前端快取的介紹上。
 
-指定教材：
+指定教材（學習順序請參考 Lidemy.com 上的說明）：
 
 1. 程式導師實驗計畫：Lesson 9-1 之 CSS 預處理器
 2. 程式導師實驗計畫：Lesson 9-2 之資料結構、Cache 與 Event Loop
@@ -694,7 +701,10 @@ HTML 的部分就簡單帶過幾個常見的 tag，帶到 head 的一些屬性�
 
 接著要來講的是 SPA，還記得之前貼給你們看過的那兩篇文章嗎？[零基礎的小明要如何成為前端工程師？](https://medium.com/hulis-blog/frontend-engineer-guide-297821512f4e)、[跟著小明一起搞懂技術名詞：MVC、SPA 與 SSR](https://medium.com/@hulitw/introduction-mvc-spa-and-ssr-545c941669e9)，這週的重點會放在這兩篇文章上面，讓大家清楚知道背後的概念為何。
 
-指定教材：無
+指定教材：
+
+1. 複習第四週網路概念：[CS75 (Summer 2012) Lecture 0 HTTP Harvard Web Development David Malan](https://www.youtube.com/watch?v=8KuO4r5CHjM)
+2. 複習第十四週系統架構：[CS75 (Summer 2012) Lecture 9 Scalability Harvard Web Development David Malan](https://www.youtube.com/watch?v=-W9F__D3oY4)
 
 [HW19 作業連結](/homeworks/week19)
 
@@ -718,9 +728,11 @@ HTML 的部分就簡單帶過幾個常見的 tag，帶到 head 的一些屬性�
 
 至此，這個課程的基礎跟中階都學完了，從下週開始就要進入到前後端框架的領域。
 
-為了怕大家複習週太無聊，這次也準備了一個有趣的小測驗，這邊是一個速度很慢的網站，原因有很多種，原始碼在這裡：（待補）。
+為了怕大家複習週太無聊，這次也準備了一個有趣的小測驗，[Lazy Hackathon](https://lidemy.github.io/lazy-hackathon/) 是一個速度很慢的網站，原因有很多，原始碼在這裡：https://github.com/Lidemy/lazy-hackathon （特別感謝 [@yakim-shu](https://github.com/yakim-shu) 同學製作這個小測驗）
 
-現在呢，你要來負責優化這個網站，在不動內容的情形下來調整，使網站的載入速度變快。這只是一個靜態網站而已，你可以 fork 到自己的 GitHub 去然後用 GitHub Page 來部署，並且使用 [WebPageTest](https://www.webpagetest.org/) 這個網站來測試你的網站速度為何。（測試地點請統一選擇 Singapore - EC2），Browser 為 Chrome。
+現在呢，你要來負責優化這個網站，在「不動內容」的情形下來調整，意思就是說網頁看起來要「長得一模一樣」，把圖片變黑白、刪減文字或是更動排版都是不允許的，但刪減多餘的 HTML、CSS 和 JS 是 ok 的，只要保證網頁看起來一樣就行了，原始碼怎麼動隨便你，總之目標是使網站的載入速度變快。
+
+詳細說明請參考上面的原始碼連結。
 
 若是你沒有任何靈感，可參考 [web.dev](https://web.dev/) 或是 [Website Performance Optimization](https://www.udacity.com/course/website-performance-optimization--ud884)
 
@@ -728,11 +740,22 @@ HTML 的部分就簡單帶過幾個常見的 tag，帶到 head 的一些屬性�
 
 ### 第二十一週（09/02 ~ 09/08）：前後端框架（一）
 
-**備註：二十一週後的內容還在規劃中**
-
 ### 後端框架（一）
 
-這一週正式進入後端框架的領域，會帶大家上最基礎的 Express，熟悉後端框架的各個元素。
+這一週終於正式進入後端框架的領域了！
+
+之前我們學過了原生的 PHP，而這一週呢，你要來自學一個輕量的 PHP 框架 [CodeIgniter](https://codeigniter.org.tw/)。
+
+相信大家之前在寫留言板的時候，寫到後面會發現自己的程式碼愈來愈亂，而且不知道怎麼整理。框架就是解決這個問題的方法之一，因為它已經制定了一系列的規範，你只要學習並且照著做就好，每一個部分的分工都會比之前明確。
+
+再者，用框架來改寫的好處就是你可以迅速跟之前的專案做比對，一定會有許多心得！所以這週在教完之後，會讓大家把之前的留言板從純 PHP 用 CodeIgniter 這套框架改寫，就可以比較一下兩者之間有哪裡不一樣。
+
+（這一週預期會卡的很嚴重，如果你卡超過兩週，請果斷先放棄這週並且往下一週前進，其實這週跟之後三週比較沒有順序關係，要先跳到下一週也是可以的）
+
+指定教材：
+
+1. 程式導師實驗計畫：Lesson 14-1 之 CodeIgniter 上
+2. [CodeIgniter 使用手冊](https://codeigniter.org.tw/userguide3/)
 
 [HW21 作業連結](/homeworks/week21/be)
 
@@ -740,6 +763,7 @@ HTML 的部分就簡單帶過幾個常見的 tag，帶到 head 的一些屬性�
 
 - [ ] 我了解一般後端框架的各個元素
 - [ ] 我了解 Route 以及 MVC
+- [ ] 我能透體驗到純 PHP 跟有框架的差別在哪裡
 
 ### 前端框架（一）
 
@@ -775,15 +799,25 @@ HTML 的部分就簡單帶過幾個常見的 tag，帶到 head 的一些屬性�
 
 ### 後端框架（二）
 
-這一週會使用 Sequelize 這個套件來做 ORM 以及串接資料庫。
+之前上過了 PHP 與輕量框架 CodeIgniter，這一週會帶大家上 Express 並且來用 JavaScript 寫後端。
+
+[Express](https://expressjs.com/) 是可以在 Node.js 環境下執行的輕量後端框架，自由度極高，也能夠快速開發出後端應用程式。
+
+跟之前有完整 MVC 架構的 CodeIgniter 相比，Express 其實鬆散（或者說自由）很多，許多地方並沒有強制規範，都只是按照前人的方法或者是慣例來實踐，十個人可能會有十種不的寫法。
+
+有了之前 PHP 以及 CodeIgniter 的基礎，我相信學習 Express 會快速許多，因此在這一週裡面可以試試看能不能快速上手 Express 並完成作業。
+
+指定教材：
+
+1. [BE201] Express 與 Sequelize：「ORM 與 Sequelize」單元前所有內容
 
 [HW22 作業連結](/homeworks/week22/be)
 
 #### 自我檢測
 
-- [ ] 了解一般後端框架的各個元素
-- [ ] 了解 Route 以及 MVC
-- [ ] 了解什麼是 ORM
+- [ ] 學習如何使用 Express 及其相關套件
+- [ ] 學過兩套不同語言的框架之後，我能發現其中的異同
+- [ ] 我理解為什麼會需要框架
 
 ### 前端框架（二）
 
@@ -813,15 +847,23 @@ HTML 的部分就簡單帶過幾個常見的 tag，帶到 head 的一些屬性�
 
 ### 後端框架（三）
 
-這週會使用 nginx + pm2 來部署我們之前寫好的 web application。
+上一週我們學會了 Express 並且成功把留言板移植過來，對基本的操作都已經很熟悉了。
+
+這一週要介紹的是一個新的東西：ORM（Object Relational Mapping），簡單來說就是把一個程式碼裡面的物件跟資料庫的物件做映射，優點就是當你操作程式裡的物件時，就會改到資料庫裡的資料。
+
+而且你幾乎不需要寫任何 SQL Query，因為 ORM 都會幫你處理的好好的，你只要學習怎麼用就可以了。這一週會使用 Sequelize 這個套件來做 ORM 以及串接資料庫，讓你體驗看看不用寫 SQL Query 的爽快感。
+
+指定教材：
+
+1. [BE201] Express 與 Sequelize：「部署：Nginx + PM2」前所有單元
 
 [HW23 作業連結](/homeworks/week23/be)
 
 #### 自我檢測
 
-- [ ] 知道如何使用 nginx
-- [ ] 知道如何使用 pm2
-- [ ] 知道如何部署 node.js 應用程式
+- [ ] 了解什麼是 ORM
+- [ ] 了解 ORM 的優缺點
+- [ ] 了解什麼是 N+1 problem 
 
 ### 前端框架（三）
 
@@ -845,17 +887,22 @@ HTML 的部分就簡單帶過幾個常見的 tag，帶到 head 的一些屬性�
 
 ### 後端框架（四）
 
-之前我們學過了原生的 PHP，也學了 Express 這套輕巧的 Node.js 框架，而這一週呢，要來教 PHP 的一個輕量的框架 [CodeIgniter](https://codeigniter.org.tw/)。
+這週會使用 Nginx + PM2 來部署我們之前寫好的 Web Application。
 
-在教完之後，會讓大家把之前的留言板從純 PHP 用 CodeIgnier 這套框架改寫，就可以比較一下兩者之間有哪裡不一樣。
+除此之外也會簡單介紹 CI/CD。
+
+指定教材：
+
+1. [BE201] Express 與 Sequelize：「部署：Nginx + PM2」前所有單元
+2. 程式導師實驗計畫：Lesson 14-2 之 CI/CD
 
 [HW24 作業連結](/homeworks/week24/be)
 
 #### 自我檢測
 
-- [ ] 學過兩套不同語言的框架之後，我能發現其中的異同
-- [ ] 我理解為什麼會需要框架
-- [ ] 我能透體驗到純 PHP 跟有框架的差別在哪裡
+- [ ] 我知道如何使用 Nginx
+- [ ] 我知道如何使用 PM2
+- [ ] 我知道如何部署 Node.js 應用程式
 
 ### 前端框架（四）
 
@@ -952,7 +999,6 @@ Codewar 是一個程式解題平台，靠這些題目，可以訓練自己對語
 
 1. 課程直播：YouTube
 2. 群組聊天：Slack
-3. 交作業：GitHub + GitHub Classroom + Travis CI 自動批改
+3. 交作業：GitHub + GitHub Classroom
 4. 練習題目：Codewar
-5. 簽到系統：GitHub Webhook + Slack GitHub App + AWS Lambda + Google Sheet API
 
