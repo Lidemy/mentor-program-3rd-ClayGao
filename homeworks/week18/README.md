@@ -83,3 +83,5 @@ node easy-bundle.js index.js // 開始打包，指定入口點為 index.js
 ```
 
 簡單來說，就是實作出一個超級陽春版的 Webpack。
+
+https://andy6804tw.github.io/2018/01/23/Gulp-tutorial/

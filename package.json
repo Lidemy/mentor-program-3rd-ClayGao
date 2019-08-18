@@ -4,7 +4,10 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint ./homeworks/**/*.js --fix",
-    "test": "jest"
+    "test": "jest",
+    "webpack": "webpack",
+    "dev": "npm run webpack -- --mode development --watch",
+    "build": "npm run webpack -- --mode production"
   },
   "husky": {
     "hooks": {
@@ -28,18 +31,37 @@
   },
   "homepage": "https://github.com/aszx87410/program-3rd#readme",
   "dependencies": {
-    "request": "^2.88.0"
+    "css-loader": "^3.2.0",
+    "request": "^2.88.0",
+    "style-loader": "^1.0.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/node": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.6",
+    "babel-preset-env": "^1.7.0",
+    "del": "^5.0.0",
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.17.2",
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.13.0",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0-beta.2",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-minify": "^3.1.0",
+    "gulp-sass": "^4.0.2",
     "husky": "^1.3.1",
     "jest": "^24.7.1",
-    "lint-staged": "^8.1.5"
+    "lint-staged": "^8.1.5",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^7.2.0",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "webpack": "^4.39.2",
+    "webpack-cli": "^3.3.6"
   },
   "description": "[程式導師實驗計畫第三期](https://medium.com/hulis-blog/mentor-program-3rd-47a2e85e33b3)是一個為期六個月的計畫，要求學生付出一定的時間（每週至少付出四十小時），希望能在結業時培養出合格的（意思就是找得到工作）的工程師，並且在就職後依舊能持續成長，成為好的工程師。"
 }

@@ -1,0 +1,41 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-color: wheat;
+}
+
+.container {
+    height: 900px;
+    width: 960px;
+    margin: 0 auto;
+   
+}
+
+.taskEnter {
+    margin-top:30px;
+    margin-bottom:10px;
+}
+
+.taskTmp {
+    margin-top:30px;
+    margin-bottom:10px;
+}
+
+
+
+.badge {
+    margin: 5px 20px;
+}
+
+.btn ~ .btn {
+    margin-left: 8px;
+}
+
+.checkbox {
+    margin-right:10px;
+}
+
+.ok {
+    text-decoration:line-through;
+}
+
