@@ -1,6 +1,6 @@
 <?php
     require_once('./conn.php');
-
+    
     function get_comments(){
         global $conn;
         class GetComments {
