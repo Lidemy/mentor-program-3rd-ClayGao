@@ -1,0 +1,19 @@
+@mixin whole-shadow(){
+    -webkit-filter: drop-shadow(0px 8px 7px rgba(0, 0, 0, 0.8));
+    filter: drop-shadow(0px 8px 7px rgba(0, 0, 0, 0.8))
+}
+
+@mixin border($border, $radius) {
+    border: $border {
+        radius:  $radius;
+    }
+}
+
+@mixin font($color, $size, $weight, $family) {
+    color: $color;
+    font: {
+        size: $size;
+        weight: $weight;
+        family: $family;
+    }
+}

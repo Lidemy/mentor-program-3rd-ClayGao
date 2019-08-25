@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <script src="./dist/index.bundle.js"></script>
+</head>
+<body>
+    <nav>
+        <span>Clay's To-do list</span>
+    </nav>
+    <div>
+        <div class="key-in">
+            <form>
+                <div class="key-in-block">
+                    <input type="text">
+                    <textarea></textarea>
+                </div>
+                <div class="key-in-levels">
+                    <div><input class="levels" type="radio" name="level" id="URGENT!" value="red"><label for="URGENT!">Do it!</label></div>
+                    <div><input class="levels" type="radio" name="level" id="important" value="yellow"><label for="important">Hurry!</label></div>
+                    <div><input class="levels" type="radio" name="level" id="common" value="green"><label for="common">Let's do it.</label></div>
+                    <div><input class="levels" type="radio" name="level" id="record" value="gray"><label for="record">Just record</label></div>
+                </div>
+                <input class="btn key-in-btn" type="button" value="Send it">
+                <input class="key-in-level" type="hidden">
+                <input class="edit-todo-id" type="hidden">
+            </form>
+        </div>
+        <div class="container">
+            <div class="title"><h1>To-do</h1></div>
+            <div class="todo">
+                <!--Ajax-->
+            </div>
+            <hr>
+            <div class="title"><h1>Done</h1></div>
+            <div class="done">
+                <!--Ajax-->
+            </div>
+        </div>
+    </div>
+</body>
