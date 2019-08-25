@@ -1,0 +1,140 @@
+@import 'mixin.scss';
+@import 'variable.scss';
+
+body {
+    background-color: $bg-color;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: $nav-color;
+    height: 50px;
+    @include font(white, 20px,bold, monospace);
+    span {
+        display: inline-block;
+        padding: 13px;
+    }
+    box-shadow: $heavy-shadow;
+}
+
+.key-in{   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+    width: 800px;
+    margin: 20px auto;
+    @include whole-shadow();
+    &-block {
+        display: inline-block;
+        height: auto;
+        width: 250px;
+        padding: 20px;
+        input {
+            width: 100%;
+            background-color: $event-title-color;
+            padding: 10px;
+            @include font(white, 20px,bold, monospace);
+            border : 0px;
+            outline: none;
+        }
+        textarea {
+            height: 225px;
+            width: 100%;
+            background-color: $event-context-color;
+            padding: 10px;
+            word-break: break-all;
+            @include font(white, 15px,bold, monospace);
+            resize : none;
+            outline: none;
+        }
+    }
+    &-levels {
+        display: inline-block;
+        div {
+            margin:8px;
+            label {
+                @include font(white, 20px,bold, monospace);
+            }
+        }       
+    }
+    .key-in-btn {
+        margin: 30px 10px;
+        padding: 5px 20px;
+        background-color: $key-in-btn-color;
+        @include font(white, 20px,bold, monospace);
+        outline: none;
+    }
+}
+
+.container {
+    .title {
+        @include whole-shadow();
+        h1 {
+            text-align: center;
+        }
+    }
+    background-color: $main-color;
+    height: auto;
+    width: 1000px;
+    margin: 20px auto;
+    .todo {
+        width: 900px;
+        display: flex;
+        justify-content: flex-start;
+        align-content: flex-start;
+        flex-flow:column  wrap;
+        max-height: 1000px;
+        margin: 40px auto;
+        @include whole-shadow();
+        &-event {
+            height: auto;
+            width: 200px;
+            margin: 10px 8px;
+            cursor: pointer;
+            &-title {
+                background-color: $event-title-color;
+                padding: $based-padding;
+                word-break: break-all;
+                @include font(white, 20px,bold, monospace);
+            }
+            &-context {
+                background-color: $event-context-color;
+                padding: $based-padding;
+                word-break: break-all;
+                @include font(white, 14px,bold, monospace);
+            }
+            &-options {
+                display: flex;
+                justify-content: space-evenly;
+                input {
+                    @include font(white, 16px,bold, monospace);
+                    width: 55px;
+                    margin: 5px 0px;
+                    border: 2px solid  { radius: 20px; }
+                    outline: none;
+                    cursor: pointer;
+                }
+                &-complete { background-color: yellowgreen;   }
+                &-update { background-color: orange;  }
+                &-delete { background-color: firebrick; }
+            }
+        }
+    }
+    .done {
+        width: 900px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-flow:column  wrap;
+        max-height: 1200px;
+        margin: 40px auto;
+        @include whole-shadow();
+    }
+}
+
+
+
+
+
