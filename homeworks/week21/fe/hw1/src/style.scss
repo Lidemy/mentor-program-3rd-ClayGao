@@ -1,0 +1,118 @@
+
+body {
+    min-height: 800px;
+    margin: 0px;
+    padding: 0px;
+    background: url('./img/bg.gif')  center center fixed no-repeat;
+    background-size: cover;
+}
+
+.wrapper {
+    margin: 0 auto;
+}
+
+.task-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    form {
+        margin: 50px auto;
+        input[type=text] {
+            font-family: monospace;
+            outline: none;
+            padding: 6px;
+            margin: 5px;
+            height: 40px;
+            font-size: 30px;  
+            border: 5px solid black;
+        }
+        input[type=button] {
+            cursor: pointer;
+            background-color:rgb(46, 40, 40);
+            font-family: monospace;
+            color: wheat;
+            outline: none;
+            padding: 4px;
+            height: 40px;
+            font-size: 15px;
+            border: 5px solid black;
+            transition: 0.3s all;
+            &:hover {
+                transform: scale(5);
+                background-color: rgb(255, 231, 0);
+                color:black;
+            }
+        }
+    }
+}
+
+.todo-list {
+    margin: 0 auto;
+    display:flex;
+    flex-direction: column-reverse;
+    justify-content: start;
+    align-items: center;
+    width: 500px;
+    &-task {
+        margin-bottom: 80px;
+        height: auto;
+        width: 450px;
+        display:flex;
+        justify-content: start;
+        align-items: center;
+        &-is-done {
+            border: 5px solid black;
+            padding: 10px;
+            font-size:72px;
+            background-color:rgb(46, 40, 40);
+            font-family: monospace;
+            color: wheat;
+            margin: 10px;
+        }
+        &-text {
+            background-color: rgb(255, 231, 0);
+            font-family: monospace;
+            font-weight: bolder;
+            padding: 30px;
+            border: 5px solid black;
+            margin: auto;
+            font-size:50px;
+        }
+        input[value=Complete] {
+            cursor: pointer;
+            font-weight: bolder;
+            margin-left: 10px;
+            font-family: monospace;
+            font-size: 36px;
+            color:wheat;
+            background-color: rgb(6, 72, 119);
+            height: 100px;
+            border: 5px solid black;
+            transition: 0.3s all;
+            &:hover {
+                height: 150px;
+                background-color: wheat;
+                color:rgb(6, 72, 119);
+            }
+        }
+        input[value=Delete] {
+            cursor: pointer;
+            font-weight: bolder;
+            margin-left: 10px;
+            font-family: monospace;
+            font-size: 36px;
+            color:wheat;
+            background-color: rgb(204, 32, 32);
+            height: 150px;
+            border: 5px solid black;
+            transition: 0.3s all;
+            &:hover {
+                transform: scale(1.1);
+                background-color: wheat;
+                color: rgb(204, 32, 32)
+            }
+        }
+    }
+   
+    
+}

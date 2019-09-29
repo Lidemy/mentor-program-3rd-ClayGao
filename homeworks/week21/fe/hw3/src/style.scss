@@ -1,0 +1,116 @@
+$nav-bg-color: transparent;
+$board-bg-color:rgba(110, 105, 105, 0.35);
+$article-border-color: wheat;
+$article-border-hover-color: rgb(235, 165, 0);
+$nav-hover-color: rgb(235, 165, 0);
+$article-hover-color :rgb(236, 200, 114);
+
+
+body {
+    background: url('./img/bg.jpg')  center center fixed no-repeat;
+    background-size: cover;
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+nav {
+    height: 30px;
+    background-color: $nav-bg-color;
+    span {
+        display: inline-block;
+        font-family: monospace;
+        font-size: 16px;
+        font-weight: bold;
+        color: white;
+        margin: 10px;
+        padding: 3px;
+        &~span {
+            cursor: pointer;
+            margin-left: 15px;
+            &:hover {
+                border-bottom: 2px solid $nav-hover-color;
+            }
+        }
+        
+    } 
+}
+
+.wrapper {
+    margin: 0 auto;
+    min-height: 900px;
+    height: auto;
+    width: 800px;
+    padding: 30px;
+    .board {
+        height: auto;
+        width: 700px;
+        background-color: $board-bg-color;
+        margin: 100px auto;
+        padding: 20px;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        .article {
+            position: relative;
+            height: auto;
+            width: 675px;
+            border-bottom: 3px solid $article-border-color;
+            transition: 0.3s all;
+            &~.article {
+                margin-bottom: 50px;
+            }
+            &:hover {
+                border-color: $article-border-hover-color;
+            }
+            &-title {
+                cursor: pointer;
+                padding: 5px 8px;
+                font-family: monospace;
+                font-size: 30px;
+                font-weight: bold;
+                color: white;
+                word-break: break-word;
+                transition: 0.3s all;
+                &:hover {
+                    color: $article-hover-color;
+                }
+            }
+            &-text {
+                padding: 5px 8px;
+                font-family: monospace;
+                font-size: 20px;
+                font-weight: bold;
+                color: white;
+                word-break: break-word;
+                &:hover {
+                    color: white;
+                }
+            }
+            &-editor {  
+                bottom: 5px;
+                float: right;
+                padding: 5px 8px;
+                font-family: monospace;
+                font-weight: bold;
+                color: white;
+                word-break: break-word;
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+footer {
+    padding: 15px;
+    bottom: 0px;
+    right: 6px;
+    font-family: monospace;
+    font-size: 8px;
+    font-weight: bold;
+    color: white;
+    word-break: break-all;
+}

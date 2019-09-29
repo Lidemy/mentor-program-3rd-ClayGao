@@ -1,0 +1,101 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: black;
+    height: 768px;
+}
+
+.banner {
+    padding: 50px;
+    font-size:40px;
+    font-family: monospace;
+    font-weight: bolder;
+    text-align: center;
+    color:wheat;
+}
+
+.board {
+    margin: 0 auto;
+    height: 570px;
+    width: 570px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-content: flex-start;
+    border: 3px solid black;
+    background-color: black;
+    box-sizing: content-box;
+}
+
+.square {
+    position: relative;
+    height: 30px;
+    width: 30px;
+    background-color: white;
+    background-color: transparent;
+}
+
+.x-line {
+    position: absolute;
+    top: 50%;
+    width: 30px;
+    height: 1px;
+    margin-top: -0.5px;
+    background-color: green;
+}
+
+.y-line {
+    position: absolute;
+    left: 50%;
+    width: 1px;
+    height: 30px;
+    margin-left: -0.5px;
+    background-color: green;  
+}
+
+.piece-preview {
+    position: absolute;
+    background-color: transparent;
+    top:50%;
+    left: 50%;
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    margin-left: -9px;
+    margin-top: -9px;
+    z-index: 1;
+}
+
+.piece-preview:hover {
+    display: inline;
+    background-color: rgba(223, 29, 29, 0.3)
+}
+
+
+.black {
+    position: absolute;
+    background-color: black;
+    top:50%;
+    left: 50%;
+    height: 15px;
+    width: 15px;
+    border: 1px solid white;
+    border-radius: 50%;
+    margin-left: -8.5px;
+    margin-top: -8.5px;
+    z-index: 2;
+}
+
+.white {
+    position: absolute;
+    background-color: white;
+    top:50%;
+    left: 50%;
+    height: 15px;
+    width: 15px;
+    border: 1px solid black;
+    border-radius: 50%;
+    margin-left: -8.5px;
+    margin-top: -8.5px;
+    z-index: 2;
+}
