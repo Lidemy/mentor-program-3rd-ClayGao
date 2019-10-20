@@ -1,0 +1,454 @@
+@import 'variable';
+@import 'mixin';
+
+/* ----- App.js  ----- */
+body {
+    background: $main-bg-img;
+    background-size: cover;
+    padding: 0px;
+    margin: 0px;
+}
+
+/*-- 因應 <Link /> 使用 --*/
+a {
+    text-decoration: none;
+    color:inherit;
+}
+
+/* ----- Nav.js  ----- */
+.window-unmoving {
+    background-color: transparent;
+    position: fixed;
+    top: 0;
+    height: 46px;
+    transition: 0.5s all;
+    width: 100%;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    ul {
+        padding: 0;
+        list-style:none;
+        li {
+            @include font(16px, rgb(168, 82, 33), bolder, monospace);
+            text-align: center;
+            outline: none;
+            display: inline-block;
+            padding: 14px;
+            &~li {
+                cursor: pointer;
+                margin-left: 8px;
+            }
+        } 
+        li.active {
+            transition: 0.5s all;
+            background-color: $sub-color;
+            box-shadow: 0px 0px 15px black
+        }
+        .date-info {
+            position: absolute;
+            right: 15px;
+            li {
+                cursor: text;
+                @include font(16px, white, normal, monospace);
+            }
+        }
+    }
+}
+
+.window-is-moving {
+    background-color: $sub-color;
+    position: fixed;
+    top: 0;
+    height: 46px;
+    width: 100%;
+    transition: 0.5s all;
+    z-index: 1;
+    box-shadow: 0px 0px 15px black;
+    display: flex;
+    align-items: center;
+    ul {
+        list-style:none;
+        padding: 0;
+        li {
+            @include font(16px, rgb(168, 82, 33), bolder, monospace);
+            text-align: center;
+            outline: none;
+            display: inline-block;
+            padding: 14px;
+            &~li {
+                cursor: pointer;
+                margin-left: 8px;
+            }
+        } 
+        li.active {
+            transition: 0.5s all;
+            color: $main-color;
+        }
+        .date-info {
+            position: absolute;
+            right: 15px;
+            li {
+                cursor: text;
+                @include font(16px, white, normal, monospace);
+            }
+        }
+    }
+}
+
+/* ----- Home.js  ----- */
+.weather {
+    display: flex;
+    position: relative;
+    height: auto;
+    width: 800px;
+    transition: 0.3s all;
+    margin: 20px;
+    .weather-card {
+        height:auto;
+        width: 300px;
+        padding: 30px;
+        background-color: rgba(37, 33, 22, 0.4);
+        border: 3px solid $border-color;
+        margin: 20px;
+        h1 {
+            @include font(40px, rgb(247, 238, 231),bolder, sans-serif);
+        }
+        p {
+            @include font(16px, rgb(247, 238, 231),normal, monospace);
+            margin-bottom: 10px;
+        }
+    }
+}
+
+.page-title {
+    @include font(80px, rgb(29, 28, 27), null, (Impact, Charcoal, sans-serif));
+    position: relative;
+    height: auto;
+    width: 800px;
+    border-bottom: 3px solid $border-color;
+    border-right: 3px solid $border-color;
+    margin: 20px;
+    padding: 10px;
+}
+
+/* ----- PostList.js / Home.js  ----- */
+
+.loading {
+    @include font(20px, $font-color, null, (monospace));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 150px;
+    width: 150px;
+    margin: 20px auto;
+    padding: 70px;
+}
+
+.wrapper {
+    margin: 0 auto;
+    min-height: 900px;
+    height: auto;
+    width: auto;
+    padding: 30px;
+    .board {
+        height: auto;
+        width: 1000px;
+        background-color: $board-bg-color;
+        margin: 100px auto;
+        padding: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        box-shadow: 0px 0px 15px black;
+        .post {
+            cursor: pointer;
+            position: relative;
+            width: 750px;
+            border: 3px solid $border-color;
+            background-color: rgba(37, 33, 22, 0.4);
+            transition: 0.25s all;
+            margin: 20px;
+            padding: 30px;
+            &:hover {
+                border-color: $sub-color;
+                background-color: rgba(37, 33, 22, 0.8);
+                box-shadow: 0px 0px 10px black;
+            }
+            &-title {
+                @include font(20px, $font-color, bold, monospace);
+                padding: 5px 8px;
+                height: 30px;
+                word-break: break-word;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                transition: 0.3s all;
+                white-space: nowrap;
+            }
+            &-text {
+                @include font(13px, $font-color, null, monospace);
+                line-height: 1.4em;
+                padding: 5px 8px;
+                margin-bottom: 40px;
+                height: 90px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                transition: 0.4s all;
+                &:hover {
+                    color: $font-color;
+                }
+            }
+            &-editor {  
+                @include font(13px, $font-color, bold, monospace);
+                bottom: 25px;
+                right: 25px;
+                padding: 5px 8px;
+                width: 180px;
+                word-break: break-word;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+            }
+        }
+    }
+}
+
+/* -----  About.js ----- */
+.info-page {
+    background-color: rgba(37, 33, 22, 0.8);
+    position: relative;
+    height: auto;
+    width: auto;
+    min-width: 700px;
+    border: 3px solid $border-color;
+    transition: 0.3s all;
+    margin: 20px;
+    padding: 60px;
+    padding-bottom: 140px;
+    box-shadow: 0px 0px 15px black;
+}
+
+/* ----- Post.js  ----- */
+.single-post {
+    background-color: rgba(37, 33, 22, 0.8);
+    position: relative;
+    height: auto;
+    width: auto;
+    min-width: 700px;
+    border: 3px solid $border-color;
+    transition: 0.3s all;
+    margin: 20px;
+    padding: 60px;
+    padding-bottom: 140px;
+    box-shadow: 0px 0px 15px black;
+    &-title {
+        @include font(40px, wheat, bold, monospace);
+        padding: 5px 8px;
+        height: auto;
+        word-break: break-word;
+        transition: 0.3s all;
+    }
+    &-text {
+        @include font(14px, rgb(216, 216, 216), null, monospace);
+        margin-top: 50px;
+        padding: 5px 8px;
+        height: auto;
+        word-break: break-word;
+        line-height: 2em;
+        p {
+            img {
+                max-width: 700px;
+            }
+            a {
+                color: $border-color;
+                padding-bottom: 3px;
+                border-bottom: 1.5px solid $sub-color;
+            }
+        }
+        pre {
+            box-shadow: 0px 0px 15px black;
+            font-size:14px;
+            line-height: 1.2em;
+            overflow: auto;
+            border: 1px solid $border-color;
+            border-radius: 4px;
+        }
+        blockquote {
+            @include font(18px, wheat, bolder, monospace);
+        }
+    }
+    &-editor {  
+        @include font(20px, $font-color, bold, monospace);
+        position: absolute;
+        bottom: 45px;
+        right: 40px;
+        padding: 5px 8px;
+        word-break: break-word;
+    }
+    &-editblock {  
+        @include font(14px, $font-color, bold, monospace);
+        position: absolute;
+        bottom: 45px;
+        left: 60px;
+        padding: 5px 8px;
+        word-break: break-word;
+        &-edit {
+            cursor: pointer;
+            padding: 12px 20px;
+            border: 2px solid $border-color;
+            transition: 0.2s all;
+            &:hover {
+                color: $main-color;
+                background-color: $sub-color
+            }
+            box-shadow: 0px 0px 15px black;
+        }
+        &-delete {
+            margin: 25px;
+            @extend .single-post-editblock-edit
+        }
+    }
+}
+
+.edit-article {
+    height: auto;
+    transition: 0.3s all;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    &-title {
+        @include font(40px, $font-color, bold, monospace);
+            transition: 0.7s all;
+            outline: none;
+            padding:  5px 20px;
+            margin-top:8px;
+            margin-bottom: 60px;
+            background-color: transparent;
+            border: 0px;
+            box-shadow: 0px 0px 15px black;
+            border: 3px solid $border-color;
+            &:focus {
+                background-color: rgba(235, 165, 0, 0.3);
+            }
+    }
+    &-text {
+        @include font(16px, $font-color, null, monospace);
+            transition: 0.7s all;
+            outline: none;
+            box-shadow: 0px 0px 15px black;
+            resize : none;
+            margin-top:16px;
+            margin-bottom: 30px;
+            padding: 20px;
+            height: 500px;
+            word-break: break-word;
+            background-color: transparent;
+            border: 3px solid $border-color;
+            &:focus {
+                background-color: rgba(235, 165, 0, 0.3);
+            }
+    }
+    &-button {
+        @include font(25px, $font-color, bold, monospace);
+        cursor: pointer;
+        margin-top:60px;
+        transition: 0.4s all;
+        outline: none;  
+        box-shadow: 5px 4px 3px rgba(20%,20%,40%,0.5);
+        padding: 30px;
+        border: 3px solid $border-color;
+        background-color: transparent;
+        &:hover {
+            color: $main-color;
+            background-color: $sub-color
+        }
+    }
+}
+
+/* ----- Write.js  ----- */
+.write-article {
+    @include font(20px, $font-color, bold, monospace);
+    position: relative;
+    height: auto;
+    width: 700px;
+    border: 3px solid $border-color;
+    transition: 0.3s all;
+    margin: 20px;
+    padding: 60px;
+    padding-bottom: 100px;
+    box-shadow: 0px 0px 15px black;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+        &-title {
+            @include font(16px, $font-color, bold, monospace);
+            transition: 0.7s all;
+            outline: none;
+            padding:  5px 20px;
+            margin-top:8px;
+            margin-bottom: 60px;
+            background-color: transparent;
+            border: 0px;
+            border: 1.5px solid $border-color;
+            &:focus {
+                background-color: rgba(235, 165, 0, 0.3);
+            }
+            &::-webkit-input-placeholder {
+                color:rgb(241, 231, 212);
+            }
+        }
+        &-editor {  
+            @include font(16px, $font-color, bold, monospace);
+            transition: 0.7s all;
+            outline: none;
+            margin-top:8px;
+            margin-bottom: 60px;
+            padding:  5px 20px;
+            background-color: transparent;
+            border: 1.5px solid $border-color;
+            &:focus {
+                background-color: rgba(235, 165, 0, 0.3);
+            }
+            &::-webkit-input-placeholder {
+                color:rgb(241, 231, 212);
+            }
+        }
+        &-text {
+            @include font(16px, $font-color, null, monospace);
+            transition: 0.7s all;
+            outline: none;
+            resize : none;
+            margin-top:16px;
+            margin-bottom: 30px;
+            padding: 10px 20px;
+            height: 500px;
+            word-break: break-word;
+            background-color: transparent;
+            border: 1.5px solid $border-color;
+            &:focus {
+                background-color: rgba(235, 165, 0, 0.3);
+            }
+            &::-webkit-input-placeholder {
+                color:rgb(241, 231, 212);
+                font-weight: bolder;
+                font-size: 16px;
+            }
+        }
+        &-button {
+            @include font(25px, $font-color, bold, monospace);
+            cursor: pointer;
+            margin-top:60px;
+            transition: 0.4s all;
+            outline: none;  
+            padding: 30px;
+            border: 3px solid $border-color;
+            background-color: transparent;
+            &:hover {
+                color: $main-color;
+                background-color: $sub-color
+            }
+        }
+}
+
