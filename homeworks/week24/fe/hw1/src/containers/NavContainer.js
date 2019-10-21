@@ -1,6 +1,6 @@
 import React from 'react';
 import Nav from '../components/nav'
-import * as actions from '../actions'
+import { getWeatherData } from '../actions'
 import { connect } from 'react-redux'
 
 const NavContainer = props => {
@@ -13,12 +13,8 @@ const mapStateToProps = state => {
     }
 }
 
-const mapDispatchToProps = dispatch => {
-    return {             
-        getWeatherAPI: () => {
-            dispatch(actions.getWeatherData())
-        }
-    }
+const mapDispatchToProps = {
+    getWeatherData
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(NavContainer)

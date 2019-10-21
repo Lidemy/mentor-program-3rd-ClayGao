@@ -2,12 +2,9 @@ import React, {Component} from 'react';
 import ReactMarkdown from 'react-markdown';
 
 class Home extends Component {
-    constructor(props) {
-        super(props)
-    }
  
     componentDidMount() {
-        this.props.getPostList()
+        this.props.getRecentPosts()
     }
     
     render(){
@@ -20,7 +17,7 @@ class Home extends Component {
                     </div>
                     <div className="weather" > 
                             {weatherData.map(data => (
-                                <div class="weather-card"> 
+                                <div className="weather-card"> 
                                     <h1>{data.time}</h1>
                                     <p>Weather: {data.Wx}</p>
                                     <p>Feel: {data.CI}</p>

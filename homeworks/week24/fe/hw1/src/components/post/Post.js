@@ -1,30 +1,38 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import ReactMarkdown from 'react-markdown';
 import CodeBlock from "../../CodeBlock";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 class Post extends Component {
-    constructor(props) {
-        super(props)
-    }
-
+    
     componentDidMount() {
         const postId = this.props.match.params.listId
-        this.props.getActiveSinglePost(postId)
+        this.props.getSinglePost(postId)
+    }
+
+    componentDidUpdate(prevProps) {
+        const postId = this.props.match.params.listId
+        const { isDeleted, isEdited, history } = this.props
+        if (isDeleted !== prevProps.isDeleted && !isDeleted) {
+            history.push('/list')
+        }
+        if (isEdited !== prevProps.isEdited && !isEdited) {
+            this.props.getSinglePost(postId)
+            window.scrollTo(0, 0) // 回到頁面頂端
+        }
     }
     
     render(){
         const postId = this.props.match.params.listId
         const { singlePostData, 
                 isLoadingSinglePost, 
-                deleteActiveSinglePost, 
-                editActiveSinglePost, 
-                completeEditActiveSinglePost, 
-                isEditing,title,
-                body,
-                history } = this.props
+                deleteSinglePost, 
+                beginEditSinglePost, 
+                editSinglePost, 
+                title,
+                isEditing,
+                body} = this.props
         return (
-            <div  className="board">
+            <div className="board">
                 <div key={singlePostData.id} 
                     className="single-post" > 
                     {!isEditing ? 
@@ -48,24 +56,23 @@ class Post extends Component {
                     <div className="single-post-editblock">
                         <span className="single-post-editblock-edit" 
                             onClick={() => { 
-                                editActiveSinglePost(singlePostData.title, singlePostData.body) 
+                                beginEditSinglePost(singlePostData.title, singlePostData.body) 
                                 }}>Edit</span>
-                        <span to="/list"
-                            className="single-post-editblock-delete" 
+                        <span className="single-post-editblock-delete" 
                             onClick={() => { 
-                                deleteActiveSinglePost(postId)
+                                deleteSinglePost(postId)
                                 }}>Delete</span>
                     </div>
                     </>
                     :
                     <>
                     <form className="edit-article">
-                        <input className="edit-article-title" type="text"  defaultValue={singlePostData.title} onChange={(e) => {editActiveSinglePost(e.target.value, body)}}/>
-                        <textarea className="edit-article-text" defaultValue={singlePostData.body} onChange={(e) => {editActiveSinglePost(title, e.target.value)}}/>
-                        <input className="edit-article-button" type="button" value="Send" onClick={()=>{ completeEditActiveSinglePost(postId, title, body)}} />
+                        <input className="edit-article-title" type="text"  defaultValue={singlePostData.title} onChange={(e) => {beginEditSinglePost(e.target.value, body)}}/>
+                        <textarea className="edit-article-text" defaultValue={singlePostData.body} onChange={(e) => {beginEditSinglePost(title, e.target.value)}}/>
+                        <input className="edit-article-button" type="button" value="Send" onClick={()=>{ editSinglePost(postId, title, body)}} />
                     </form>
                     <div className="single-post-editor">
-                        {"Author: " + (singlePostData.author ? singlePostData.author : "Noname")}
+                        {"Author: " + (singlePostData.author || "Noname")}
                     </div>
                     </>
                     }       

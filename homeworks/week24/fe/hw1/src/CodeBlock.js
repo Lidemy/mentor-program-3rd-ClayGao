@@ -2,7 +2,7 @@ import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
 import { tomorrow } from "react-syntax-highlighter/dist/esm/styles/prism";
-import { jsx, javascript, php, sass, scss } from "react-syntax-highlighter/dist/esm/languages/prism";
+import { jsx, javascript, php } from "react-syntax-highlighter/dist/esm/languages/prism";
 
 class CodeBlock extends PureComponent {
   static propTypes = {
