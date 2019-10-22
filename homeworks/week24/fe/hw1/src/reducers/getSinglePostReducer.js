@@ -6,10 +6,15 @@ const initState = {
 }
 
 const editingContent = {
+    isEdited: false,
     isEditing: false,
     isDeleted : false,
     title: '',
     body: ''
+}
+
+const createPost = {
+    isCreated: false,
 }
 
 export function getSinglePostReducer(state = initState, action) {
@@ -42,12 +47,14 @@ export function editSinglePostReducer(state = editingContent, action) {
         case actionTypes.EDIT_SINGLE_POST + '_PENDING':
             return {
                 ...state,
+                isEdited: true,
                 title: action.title,
-                body: action.body 
+                body: action.body, 
             }
         case actionTypes.EDIT_SINGLE_POST + '_FULFILLED':
             return {
                 ...state,
+                isEdited: false,
                 isEditing: false,
             }
         case actionTypes.DELETE_SINGLE_POST  + '_PENDING':
@@ -65,3 +72,19 @@ export function editSinglePostReducer(state = editingContent, action) {
     }
 }
 
+export function createSinglePostReducer(state = createPost, action) {
+    switch(action.type) {
+        case actionTypes.CREATE_SINGLE_POST + '_PENDING':
+            return {
+                ...state,
+                isCreated: true,
+            }
+        case actionTypes.CREATE_SINGLE_POST + '_FULFILLED':
+            return {
+                ...state,
+                isCreated: false,
+            }
+        default:
+            return state
+    }
+}

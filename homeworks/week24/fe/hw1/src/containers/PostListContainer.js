@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux'
 import { BrowserRouter as Router, Route, Link, withRouter } from "react-router-dom";
 import PostList from '../components/post_list'
-import * as actions from '../actions'
+import { getPostList } from '../actions'
 
 const PostListContainer = props => {
     return <PostList {...props} />
@@ -15,12 +15,8 @@ const mapStateToProps = state => {
     }
 }
 
-const mapDispatchToProps = dispatch => {
-    return {             
-        getPostList: () => {
-            dispatch(actions.getPosts())
-        }
-    }
+const mapDispatchToProps = {  
+    getPostList
 }
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(PostListContainer)) 

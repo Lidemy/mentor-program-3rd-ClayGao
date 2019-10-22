@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link, withRouter } from "react-router-dom";
 import Home from '../components/home'
-import * as actions from '../actions'
+import { getRecentPosts } from '../actions'
 import { connect } from 'react-redux'
 
 const HomeContainer = props => {
@@ -15,12 +15,8 @@ const mapStateToProps = state => {
     }
 }
 
-const mapDispatchToProps = dispatch => {
-    return {             
-        getPostList: () => {
-            dispatch(actions.getRecentPosts())
-        }
-    }
+const mapDispatchToProps = {         
+    getRecentPosts
 }
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(HomeContainer))

@@ -2,9 +2,6 @@ import React, {Component} from 'react';
 import ReactMarkdown from 'react-markdown';
 
 class PostList extends Component {
-    constructor(props) {
-        super(props)
-    }
  
     componentDidMount() {
         this.props.getPostList()
